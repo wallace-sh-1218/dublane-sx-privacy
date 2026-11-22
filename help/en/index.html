@@ -40,8 +40,8 @@
     </div>
     <div class="stats">
       <div class="stat"><b>100%</b><span>On-device; media never leaves your disk</span></div>
-      <div class="stat"><b>4 steps</b><span>Extract · segment · transcribe · translate</span></div>
-      <div class="stat"><b>3 free</b><span>exports, unlimited with Pro</span></div>
+      <div class="stat"><b>5 steps</b><span>Extract · segment · transcribe · translate · dub</span></div>
+      <div class="stat"><b>5 free</b><span>exports, unlimited with Pro</span></div>
     </div>
     <div class="heroMedia">
       <div class="glow"></div>
@@ -115,8 +115,7 @@
       <h2>Importing</h2>
       <p class="sub">Common video and audio formats are supported. Duration, waveforms and thumbnails are generated on import.</p>
       <ul class="list">
-        <li><b>Video</b>: MP4, MOV, MKV, AVI, WebM, M4V</li>
-        <li><b>Audio</b>: MP3, WAV, M4A, AAC, FLAC, OGG</li>
+        <li><b>Video</b>: MP4, MOV, MKV, AVI, WebM, M4V and more</li>
         <li><b>Where files live</b>: your media stays where it is; project data (segments, dubs, subtitles) is stored in the app’s own project folder</li>
       </ul>
       <div class="note"><b>File access:</b> if you later move or rename the source, the preview offers “Choose file again”.
@@ -125,7 +124,7 @@
 
     <section id="analysis" data-reveal>
       <h2>AI analysis</h2>
-      <p class="sub">One run does four things, all on this Mac. The first translation starts the local model, which usually takes 15–30 seconds.</p>
+      <p class="sub">Four analysis steps, then dubbing per segment — all on this Mac. The first translation starts the local model, which usually takes 15–30 seconds.</p>
       <figure>
         <div class="media">
           <video data-autoplay autoplay muted loop playsinline poster="../assets/video/analysis-en.jpg">
@@ -133,14 +132,15 @@
           </video>
           <img class="poster" src="../assets/video/analysis-en.jpg" alt="AI analysis in four steps">
         </div>
-        <figcaption class="caption">Extract audio → VAD + segments → speech to text → translate.</figcaption>
+        <figcaption class="caption">Extract audio → VAD + segments → speech to text → translate → dub (generated per segment after analysis).</figcaption>
       </figure>
       <ul class="list">
         <li><b>Spoken language</b>: pick what the video actually says; auto-detect is fine when unsure</li>
         <li><b>Translate</b>: on by default; the target language comes from Settings → Dubbing Language</li>
+        <li><b>Dub</b>: after analysis, pick a voice in the segment editor and generate the dub per segment</li>
         <li><b>Re-analyse</b>: clears this project’s generated audio, segments and translations, then runs again</li>
       </ul>
-      <div class="note"><b>Tip:</b> you can close the window while analysis runs — the job keeps going in the background.</div>
+      <div class="note"><b>Tip:</b> closing the window stops the job; the next run picks up from the step where it stopped.</div>
     </section>
 
     <section id="timeline" data-reveal>
@@ -158,7 +158,7 @@
         <li><b>Select</b>: click a clip; double-click to open the segment editor</li>
         <li><b>Move</b>: drag the block itself; hold <kbd>Ctrl</kbd> to bypass snapping</li>
         <li><b>Trim</b>: drag the left or right edge</li>
-        <li><b>Split / trim at playhead</b>: the scissors, trim-left and trim-right buttons in the toolbar</li>
+        <li><b>Split at playhead</b>: the <code>][</code> icon; <b>trim left / right</b>: <code>⋮[</code> / <code>]⋮</code></li>
         <li><b>Merge</b>: select adjacent segments and press merge</li>
         <li><b>Hide / restore</b>: hidden clips stay in the list and can be restored anytime</li>
         <li><b>Lock</b>: locked clips cannot be dragged or trimmed</li>
@@ -174,7 +174,7 @@
         <li><b>Voice</b>: choose a character or an app-wide voice in the segment editor, preview, then apply</li>
         <li><b>Clone a voice</b>: import a clean 5–30 second sample, name it, and reuse it across projects</li>
         <li><b>Segment gain</b>: up to 500% per clip; export mix up to 200% with automatic limiting above 200%</li>
-        <li><b>Character Manager</b>: group voices by project or app, with avatars and animation previews</li>
+        <li><b>Character Manager</b>: group voices by project or app, with avatars and previews</li>
       </ul>
       <div class="note"><b>Please note:</b> only clone voices you have permission to use. You are responsible for how exported content is used.</div>
     </section>
@@ -184,8 +184,8 @@
       <p class="sub">Subtitles come from the segment table: source text, translation, or both.</p>
       <ul class="list">
         <li><b>Style</b>: size, colour, outline, background, position (bottom / centre / top)</li>
-        <li><b>Output</b>: burn into the picture, export a sidecar SRT, or both</li>
-        <li><b>Fonts</b>: system fonts by default; drop your own font into the app’s fonts folder to use it</li>
+        <li><b>Output</b>: burn into the picture, export a sidecar SRT / ASS, or both</li>
+        <li><b>Fonts</b>: pick a common CJK family in the export window, or choose “Add font” to import your own TTF / OTF / TTC; imported fonts can be deleted anytime</li>
       </ul>
     </section>
 
@@ -204,7 +204,7 @@
         <li><b>Mix volume</b>: 0–200%; above 200% a limiter is added automatically to avoid clipping</li>
         <li><b>Subtitles</b>: burn in, export SRT, or keep both</li>
         <li><b>Advanced</b>: codec, channels and loudness live under Advanced</li>
-        <li><b>Count</b>: free builds include 3 exports; Pro removes the limit</li>
+        <li><b>Count</b>: free builds include 5 exports; Pro removes the limit</li>
       </ul>
       <figure>
         <div class="media">
@@ -289,7 +289,7 @@
 
       <details class="faq">
         <summary>What are the free limits?</summary>
-        <p>Free builds can export 3 finished files. Pro removes the export limit. Models, analysis and editing are not limited.</p>
+        <p>Free builds can export 5 finished files. Pro removes the export limit. Models, analysis and editing are not limited.</p>
       </details>
 
       <details class="faq">

@@ -40,8 +40,8 @@
     </div>
     <div class="stats">
       <div class="stat"><b>100%</b><span>本机运行，素材不出硬盘</span></div>
-      <div class="stat"><b>4 步</b><span>提取 · 分段 · 识别 · 翻译</span></div>
-      <div class="stat"><b>3 次</b><span>免费导出，Pro 解锁不限次数</span></div>
+      <div class="stat"><b>5 步</b><span>提取 · 分段 · 识别 · 翻译 · 配音</span></div>
+      <div class="stat"><b>5 次</b><span>免费导出，Pro 解锁不限次数</span></div>
     </div>
     <div class="heroMedia">
       <div class="glow"></div>
@@ -115,8 +115,7 @@
       <h2>导入视频</h2>
       <p class="sub">支持常见视频与音频格式，导入后会自动读取时长、生成波形与缩略图。</p>
       <ul class="list">
-        <li><b>视频</b>：MP4、MOV、MKV、AVI、WebM、M4V</li>
-        <li><b>音频</b>：MP3、WAV、M4A、AAC、FLAC、OGG</li>
+        <li><b>视频</b>：MP4、MOV、MKV、AVI、WebM、M4V 等</li>
         <li><b>文件位置</b>：视频保留在原位置，工程数据（分段、配音、字幕）存在应用自己的项目目录</li>
       </ul>
       <div class="note"><b>权限提示：</b>如果之后移动或重命名了源文件，预览会提示「需要重新打开」。
@@ -125,7 +124,7 @@
 
     <section id="analysis" data-reveal>
       <h2>AI 分析</h2>
-      <p class="sub">一次分析完成四件事，全部在本机执行。第一次翻译会启动本地模型，通常需要 15–30 秒。</p>
+      <p class="sub">先做四步分析，再按片段生成配音，全部在本机执行。第一次翻译会启动本地模型，通常需要 15–30 秒。</p>
       <figure>
         <div class="media">
           <video data-autoplay autoplay muted loop playsinline poster="assets/video/analysis-zh.jpg">
@@ -133,14 +132,15 @@
           </video>
           <img class="poster" src="assets/video/analysis-zh.jpg" alt="AI 分析四步流程">
         </div>
-        <figcaption class="caption">音频提取 → VAD 检测 + 分段 → 语音识别 → 翻译。</figcaption>
+        <figcaption class="caption">音频提取 → VAD 检测 + 分段 → 语音识别 → 翻译 → 配音（分析完成后按片段生成）。</figcaption>
       </figure>
       <ul class="list">
         <li><b>识别语言</b>：选视频里实际说的语言；不确定时可以先用自动检测</li>
         <li><b>翻译</b>：默认开启，译文写入「译文」列；目标语言在「设置 → 配音语种」里选择</li>
+        <li><b>配音</b>：分析完成后，在片段编辑器里选好音色，按片段生成配音</li>
         <li><b>重新分析</b>：会清理该项目已生成的音频、分段和翻译，再从头跑一遍</li>
       </ul>
-      <div class="note"><b>提示：</b>分析过程中可以关掉窗口继续用其它功能，任务会继续在后台执行。</div>
+      <div class="note"><b>提示：</b>分析过程中关闭窗口会停止任务；下次打开会从上次中断的步骤继续。</div>
     </section>
 
     <section id="timeline" data-reveal>
@@ -158,7 +158,7 @@
         <li><b>选择</b>：单击片段；双击可进入片段编辑</li>
         <li><b>移动</b>：拖动片段本身；按住 <kbd>Ctrl</kbd> 可临时关闭吸附</li>
         <li><b>裁剪</b>：拖动片段左右边缘</li>
-        <li><b>在播放头分割 / 裁剪</b>：工具条上的剪刀、左裁、右裁按钮</li>
+        <li><b>在播放头分割</b>：<code>][</code> 图标；<b>向左 / 向右裁剪</b>：<code>⋮[</code> / <code>]⋮</code> 图标</li>
         <li><b>合并</b>：选中相邻片段后点合并按钮</li>
         <li><b>隐藏 / 恢复</b>：隐藏的片段保留在列表里，随时可以恢复</li>
         <li><b>锁定</b>：锁定后不会被拖动或裁剪，避免误改</li>
@@ -174,7 +174,7 @@
         <li><b>音色</b>：在片段编辑器里选择角色或应用音色库里的声音，试听后应用</li>
         <li><b>克隆音色</b>：导入一段干净的人声（建议 5–30 秒），命名后即可在所有项目里使用</li>
         <li><b>段级增益</b>：单个片段最高可加到 500%；导出混音最高 200%，超过 200% 会自动限幅</li>
-        <li><b>角色管理</b>：把音色按项目 / 应用分组，支持头像与动画预览</li>
+        <li><b>角色管理</b>：把音色按项目 / 应用分组，支持头像与试听</li>
       </ul>
       <div class="note"><b>合规提示：</b>克隆他人声音前请取得授权；导出内容的使用责任由使用者承担。</div>
     </section>
@@ -184,8 +184,8 @@
       <p class="sub">字幕内容来自片段列表：可以只用原文、只用译文，或两者同时显示。</p>
       <ul class="list">
         <li><b>样式</b>：字号、颜色、描边、背景、位置（底部 / 居中 / 顶部）</li>
-        <li><b>输出方式</b>：烧录进画面、导出单独的 SRT 文件，或两者都要</li>
-        <li><b>字体</b>：使用系统字体；也可以把自己的字体文件放进应用的 fonts 目录</li>
+        <li><b>输出方式</b>：烧录进画面、导出单独的 SRT / ASS 文件，或两者都要</li>
+        <li><b>字体</b>：在导出窗口的「字幕」里选常用中文字体，或点「添加字体」导入自己的 TTF / OTF / TTC；导入的字体可以随时删除</li>
       </ul>
     </section>
 
@@ -204,7 +204,7 @@
         <li><b>混音音量</b>：0–200%；超过 200% 会自动挂限幅器，避免削波</li>
         <li><b>字幕</b>：可烧录、可导出 SRT，也可以两者都保留</li>
         <li><b>高级设置</b>：编码、声道、响度等参数在「高级设置」里展开</li>
-        <li><b>次数</b>：免费版可导出 3 次；Pro 解锁后不限次数</li>
+        <li><b>次数</b>：免费版可导出 5 次；Pro 解锁后不限次数</li>
       </ul>
       <figure>
         <div class="media">
@@ -289,7 +289,7 @@
 
       <details class="faq">
         <summary>免费版有什么限制？</summary>
-        <p>免费版可以导出 3 次完整成品；Pro 解锁后不再限制次数。所有模型、分析和编辑功能不受影响。</p>
+        <p>免费版可以导出 5 次完整成品；Pro 解锁后不再限制次数。所有模型、分析和编辑功能不受影响。</p>
       </details>
 
       <details class="faq">

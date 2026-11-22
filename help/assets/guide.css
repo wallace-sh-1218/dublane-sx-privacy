@@ -259,3 +259,9 @@ footer.site .spacer { flex: 1 1 auto; }
 .introBand { padding-top: 34px; }
 .introBand figure { margin: 0; }
 .heroMedia .media { max-width: 1120px; margin: 0 auto; }
+
+code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+  font-size: 0.9em; padding: 1px 5px; border-radius: 5px;
+  background: var(--surface-2); border: 1px solid var(--line);
+}
