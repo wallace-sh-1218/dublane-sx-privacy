@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dublane 使用指南 · 本地视频配音编辑器</title>
+<meta name="description" content="Dublane 使用指南：导入视频、AI 自动分段与翻译、时间线配音、字幕与导出。全部在 Mac 本地完成，无需上传。">
+<meta name="robots" content="index, follow">
+<link rel="alternate" hreflang="zh-CN" href="https://wallace-sh-1218.github.io/dublane-sx-privacy/help/">
+<link rel="alternate" hreflang="en" href="https://wallace-sh-1218.github.io/dublane-sx-privacy/help/en/">
+<link rel="icon" href="assets/brand/icon.png">
+<link rel="stylesheet" href="assets/guide.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="./">
+      <img src="assets/brand/wordmark-zh.png" alt="Dublane · 声巷">
+      <span class="tag">使用指南</span>
+    </a>
+    <nav>
+      <a class="hide-sm" href="#start">快速开始</a>
+      <a class="hide-sm" href="#faq">常见问题</a>
+      <a class="hide-sm" href="https://wallace-sh-1218.github.io/dublane-sx-privacy/">隐私政策</a>
+      <span class="lang"><a class="on" href="./">中文</a><a href="en/">EN</a></span>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Dublane · 使用指南</div>
+    <h1>把任何视频，<br>变成你的语言</h1>
+    <p class="lead">导入一次，Dublane 在本机完成语音分段、识别、翻译与配音，再把成品导出。
+      没有账号、没有上传、没有排队。</p>
+    <div class="cta">
+      <a class="btn" href="#start">开始使用</a>
+      <a class="btn ghost" href="#intro">观看 20 秒介绍</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>100%</b><span>本机运行，素材不出硬盘</span></div>
+      <div class="stat"><b>4 步</b><span>提取 · 分段 · 识别 · 翻译</span></div>
+      <div class="stat"><b>3 次</b><span>免费导出，Pro 解锁不限次数</span></div>
+    </div>
+    <div class="heroMedia">
+      <div class="glow"></div>
+      <figure class="media">
+        <img src="assets/shots/zh-main.webp" alt="Dublane 主界面" width="1800" height="1350">
+      </figure>
+    </div>
+  </div>
+</div>
+
+<div class="wrap introBand" id="intro">
+  <figure class="media">
+    <video data-autoplay autoplay muted loop playsinline poster="assets/video/intro-zh.jpg">
+      <source src="assets/video/intro-zh.mp4" type="video/mp4">
+    </video>
+    <img class="poster" src="assets/video/intro-zh.jpg" alt="Dublane 介绍视频">
+  </figure>
+  <p class="caption">20 秒介绍：自动分段、翻译与配音，然后导出成品。</p>
+</div>
+
+<div class="wrap layout">
+  <nav class="toc" aria-label="目录">
+    <div class="h">目录</div>
+    <ol>
+      <li><a href="#start">快速开始</a></li>
+      <li><a href="#import">导入视频</a></li>
+      <li><a href="#analysis">AI 分析</a></li>
+      <li><a href="#timeline">时间线编辑</a></li>
+      <li><a href="#dubbing">配音与音色</a></li>
+      <li><a href="#subtitles">字幕</a></li>
+      <li><a href="#export">导出</a></li>
+      <li><a href="#tracks">轨道与视图</a></li>
+      <li><a href="#system">系统检测</a></li>
+      <li><a href="#settings">设置</a></li>
+      <li><a href="#keys">快捷键</a></li>
+      <li><a href="#faq">常见问题</a></li>
+    </ol>
+  </nav>
+
+  <main>
+
+    <section id="start" data-reveal>
+      <h2>快速开始</h2>
+      <p class="sub">三个步骤得到成片。第一次使用前，先在「系统检测」里下载所需的语音模型。</p>
+      <div class="grid3">
+        <div class="card">
+          <div class="num">1</div>
+          <b>导入视频</b>
+          <p>点左上角「添加视频」，选择本地的视频或音频文件。文件会原地读取，不会复制到云端。</p>
+        </div>
+        <div class="card">
+          <div class="num">2</div>
+          <b>运行 AI 分析</b>
+          <p>点视频行右侧的播放图标，语言选好后「开始分析」。分段、原文和译文会自动填进列表。</p>
+        </div>
+        <div class="card">
+          <div class="num">3</div>
+          <b>试听并导出</b>
+          <p>在时间线检查节奏与配音，点右上「导出」选择视频、纯音频或字幕。</p>
+        </div>
+      </div>
+      <figure>
+        <div class="media">
+          <img src="assets/shots/zh-main.webp" alt="Dublane 主界面：左侧视频列表、双预览、片段列表与时间线" loading="lazy" width="1800" height="1350">
+        </div>
+        <figcaption class="caption">主界面：左边是视频库，中间是「原视频 / 配音预览」双画面和片段表，底部是时间线。</figcaption>
+      </figure>
+    </section>
+
+    <section id="import" data-reveal>
+      <h2>导入视频</h2>
+      <p class="sub">支持常见视频与音频格式，导入后会自动读取时长、生成波形与缩略图。</p>
+      <ul class="list">
+        <li><b>视频</b>：MP4、MOV、MKV、AVI、WebM、M4V</li>
+        <li><b>音频</b>：MP3、WAV、M4A、AAC、FLAC、OGG</li>
+        <li><b>文件位置</b>：视频保留在原位置，工程数据（分段、配音、字幕）存在应用自己的项目目录</li>
+      </ul>
+      <div class="note"><b>权限提示：</b>如果之后移动或重命名了源文件，预览会提示「需要重新打开」。
+        点「重新选择文件」再选同一个文件即可恢复，已有的轨道、分段和配音都会保留。</div>
+    </section>
+
+    <section id="analysis" data-reveal>
+      <h2>AI 分析</h2>
+      <p class="sub">一次分析完成四件事，全部在本机执行。第一次翻译会启动本地模型，通常需要 15–30 秒。</p>
+      <figure>
+        <div class="media">
+          <video data-autoplay autoplay muted loop playsinline poster="assets/video/analysis-zh.jpg">
+            <source src="assets/video/analysis-zh.mp4" type="video/mp4">
+          </video>
+          <img class="poster" src="assets/video/analysis-zh.jpg" alt="AI 分析四步流程">
+        </div>
+        <figcaption class="caption">音频提取 → VAD 检测 + 分段 → 语音识别 → 翻译。</figcaption>
+      </figure>
+      <ul class="list">
+        <li><b>识别语言</b>：选视频里实际说的语言；不确定时可以先用自动检测</li>
+        <li><b>翻译</b>：默认开启，译文写入「译文」列；目标语言在「设置 → 配音语种」里选择</li>
+        <li><b>重新分析</b>：会清理该项目已生成的音频、分段和翻译，再从头跑一遍</li>
+      </ul>
+      <div class="note"><b>提示：</b>分析过程中可以关掉窗口继续用其它功能，任务会继续在后台执行。</div>
+    </section>
+
+    <section id="timeline" data-reveal>
+      <h2>时间线编辑</h2>
+      <p class="sub">片段块就是配音的时间范围。所有操作都会进入撤销历史，随时可以重来。</p>
+      <figure>
+        <div class="media">
+          <video data-autoplay autoplay muted loop playsinline poster="assets/video/timeline-zh.jpg">
+            <source src="assets/video/timeline-zh.mp4" type="video/mp4">
+          </video>
+          <img class="poster" src="assets/video/timeline-zh.jpg" alt="时间线编辑界面">
+        </div>
+      </figure>
+      <ul class="list">
+        <li><b>选择</b>：单击片段；双击可进入片段编辑</li>
+        <li><b>移动</b>：拖动片段本身；按住 <kbd>Ctrl</kbd> 可临时关闭吸附</li>
+        <li><b>裁剪</b>：拖动片段左右边缘</li>
+        <li><b>在播放头分割 / 裁剪</b>：工具条上的剪刀、左裁、右裁按钮</li>
+        <li><b>合并</b>：选中相邻片段后点合并按钮</li>
+        <li><b>隐藏 / 恢复</b>：隐藏的片段保留在列表里，随时可以恢复</li>
+        <li><b>锁定</b>：锁定后不会被拖动或裁剪，避免误改</li>
+        <li><b>微调</b>：选中片段后按 <kbd>←</kbd> <kbd>→</kbd>，步长在工具条里选（默认 10 ms）</li>
+        <li><b>撤销 / 重做</b>：<kbd>⌘Z</kbd> / <kbd>⇧⌘Z</kbd>，也可以走菜单「编辑」</li>
+      </ul>
+    </section>
+
+    <section id="dubbing" data-reveal>
+      <h2>配音与音色</h2>
+      <p class="sub">每个片段可以单独选择音色、语速和增益，也可以克隆自己的声音。</p>
+      <ul class="list">
+        <li><b>音色</b>：在片段编辑器里选择角色或应用音色库里的声音，试听后应用</li>
+        <li><b>克隆音色</b>：导入一段干净的人声（建议 5–30 秒），命名后即可在所有项目里使用</li>
+        <li><b>段级增益</b>：单个片段最高可加到 500%；导出混音最高 200%，超过 200% 会自动限幅</li>
+        <li><b>角色管理</b>：把音色按项目 / 应用分组，支持头像与动画预览</li>
+      </ul>
+      <div class="note"><b>合规提示：</b>克隆他人声音前请取得授权；导出内容的使用责任由使用者承担。</div>
+    </section>
+
+    <section id="subtitles" data-reveal>
+      <h2>字幕</h2>
+      <p class="sub">字幕内容来自片段列表：可以只用原文、只用译文，或两者同时显示。</p>
+      <ul class="list">
+        <li><b>样式</b>：字号、颜色、描边、背景、位置（底部 / 居中 / 顶部）</li>
+        <li><b>输出方式</b>：烧录进画面、导出单独的 SRT 文件，或两者都要</li>
+        <li><b>字体</b>：使用系统字体；也可以把自己的字体文件放进应用的 fonts 目录</li>
+      </ul>
+    </section>
+
+    <section id="export" data-reveal>
+      <h2>导出</h2>
+      <p class="sub">三种输出类型：完整视频、纯音频、仅字幕文件。</p>
+      <figure>
+        <div class="media">
+          <video data-autoplay autoplay muted loop playsinline poster="assets/video/export-zh.jpg">
+            <source src="assets/video/export-zh.mp4" type="video/mp4">
+          </video>
+          <img class="poster" src="assets/video/export-zh.jpg" alt="导出对话框">
+        </div>
+      </figure>
+      <ul class="list">
+        <li><b>混音音量</b>：0–200%；超过 200% 会自动挂限幅器，避免削波</li>
+        <li><b>字幕</b>：可烧录、可导出 SRT，也可以两者都保留</li>
+        <li><b>高级设置</b>：编码、声道、响度等参数在「高级设置」里展开</li>
+        <li><b>次数</b>：免费版可导出 3 次；Pro 解锁后不限次数</li>
+      </ul>
+      <figure>
+        <div class="media">
+          <img src="assets/shots/zh-export.webp" alt="导出对话框：输出类型、混音音量、字幕与高级设置" loading="lazy" width="1800" height="1350">
+        </div>
+        <figcaption class="caption">导出的参数都会保存在本机，下次打开仍然生效。</figcaption>
+      </figure>
+    </section>
+
+    <section id="tracks" data-reveal>
+      <h2>轨道与视图</h2>
+      <p class="sub">多轨视图里可以快速调整编辑密度和显示细节。</p>
+      <ul class="list">
+        <li><b>轨道高度</b>：工具条里的高度按钮，1x / 1.5x / 2x</li>
+        <li><b>横向缩放</b>：<kbd>1x</kbd> 到 8x，方便对齐很短的片段</li>
+        <li><b>波形透明度</b>：工具条右侧的百分比，调整片段内波形的浓淡</li>
+        <li><b>片段编号</b>：<b>#</b> 图标按钮，打开后所有轨道的每个片段都显示序号；关闭时不显示</li>
+        <li><b>监听 / 静音</b>：轨道头的耳机图标决定该轨是否进入预览与导出混音</li>
+      </ul>
+    </section>
+
+    <section id="system" data-reveal>
+      <h2>系统检测与模型</h2>
+      <p class="sub">顶部盾牌图标进入「系统检测」：检查内置工具，并管理需要下载的模型。</p>
+      <figure>
+        <div class="media">
+          <img src="assets/shots/zh-system.webp" alt="系统检测：TTS 模型、语音识别模型与下载状态" loading="lazy" width="1800" height="1350">
+        </div>
+        <figcaption class="caption">每行右侧：下载 / 改下载地址 / 帮助；已下载的模型可以直接删除。</figcaption>
+      </figure>
+      <ul class="list">
+        <li><b>TTS 模型</b>：Q8（更小更快）或 F16（更大更精细），声学模型两者共用</li>
+        <li><b>语音识别</b>：Small / Medium / Large，按机器性能选择；可以只下当前要用的</li>
+        <li><b>翻译模型</b>：可选；不下载也能用，翻译前会要求同意 Gemma 使用条款</li>
+        <li><b>删除模型</b>：已下载的行点垃圾桶图标并确认，文件会从磁盘移除，需要时可重新下载</li>
+        <li><b>下载地址</b>：默认走内置地址；国内网络可在每行的链接图标里改成镜像或自己的地址</li>
+      </ul>
+    </section>
+
+    <section id="settings" data-reveal>
+      <h2>设置</h2>
+      <p class="sub">语言、外观、配音目标语种和默认参数都在这里。</p>
+      <figure>
+        <div class="media">
+          <img src="assets/shots/zh-settings.webp" alt="设置：语言、外观、配音语种、输出目录与配音参数" loading="lazy" width="1800" height="1350">
+        </div>
+      </figure>
+      <ul class="list">
+        <li><b>界面语言</b>：跟随系统或手动指定，立即生效</li>
+        <li><b>配音语种</b>：翻译与配音的目标语种</li>
+        <li><b>输出目录</b>：导出的默认位置</li>
+        <li><b>配音参数</b>：随机种子、采样温度、音色贴合度（CFG）；单个片段可以在编辑器里覆盖</li>
+      </ul>
+    </section>
+
+    <section id="keys" data-reveal>
+      <h2>快捷键</h2>
+      <p class="sub">在时间线或片段列表里使用；文本输入框获得焦点时，快捷键交给输入框处理。</p>
+      <table class="keys">
+        <tr><td><kbd>Space</kbd></td><td>播放 / 暂停</td></tr>
+        <tr><td><kbd>⌘Z</kbd> / <kbd>⇧⌘Z</kbd></td><td>撤销 / 重做片段操作（文字输入框里是文本撤销）</td></tr>
+        <tr><td><kbd>⌘C</kbd> / <kbd>⌘V</kbd></td><td>复制 / 粘贴片段（文字输入框里是文本复制粘贴）</td></tr>
+        <tr><td><kbd>←</kbd> / <kbd>→</kbd></td><td>按工具条的步长微调选中片段</td></tr>
+        <tr><td><kbd>Esc</kbd></td><td>退出全屏预览</td></tr>
+      </table>
+    </section>
+
+    <section id="faq" data-reveal>
+      <h2>常见问题</h2>
+
+      <details class="faq">
+        <summary>预览提示「需要重新打开」怎么办？</summary>
+        <p>通常是源文件被移动、重命名，或 macOS 在应用更新后收回了文件权限。点提示里的「重新选择文件」，
+          选中同一个文件即可恢复；已有的轨道、分段和配音不会丢失。</p>
+      </details>
+
+      <details class="faq">
+        <summary>开始分析时提示缺少模型？</summary>
+        <p>打开顶部盾牌图标进入「系统检测」，在对应的模型行点「下载」。第一次下载量较大，建议在稳定网络下进行；
+          下载完成后状态会变成「已下载」。</p>
+      </details>
+
+      <details class="faq">
+        <summary>免费版有什么限制？</summary>
+        <p>免费版可以导出 3 次完整成品；Pro 解锁后不再限制次数。所有模型、分析和编辑功能不受影响。</p>
+      </details>
+
+      <details class="faq">
+        <summary>译文的目标语言在哪里改？</summary>
+        <p>「设置 → 配音语种」。改了之后，重新运行翻译或重新分析，就会按新的目标语言生成译文和配音。</p>
+      </details>
+
+      <details class="faq">
+        <summary>没网还能用吗？</summary>
+        <p>可以。模型下载完成后，分段、识别、翻译、配音与导出都在本机运行，不需要联网。</p>
+      </details>
+
+      <details class="faq">
+        <summary>视频和音频会被上传吗？</summary>
+        <p>不会。Dublane 不提供账号系统，也不会上传素材；除下载模型外，应用不需要访问外网。详见
+          <a href="https://wallace-sh-1218.github.io/dublane-sx-privacy/">隐私政策</a>。</p>
+      </details>
+    </section>
+
+  </main>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 Dublane SX</span>
+    <span class="spacer"></span>
+    <a href="https://wallace-sh-1218.github.io/dublane-sx-privacy/">隐私政策</a>
+    <a href="mailto:xmediaframework@163.com">xmediaframework@163.com</a>
+  </div>
+</footer>
+
+<script src="assets/guide.js"></script>
+</body>
+</html>

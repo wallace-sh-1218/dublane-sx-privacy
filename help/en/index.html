@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dublane User Guide · On-device video dubbing</title>
+<meta name="description" content="Dublane user guide: import a video, auto-segment and translate, dub on the timeline, style subtitles and export. Everything runs locally on your Mac.">
+<meta name="robots" content="index, follow">
+<link rel="alternate" hreflang="zh-CN" href="https://wallace-sh-1218.github.io/dublane-sx-privacy/help/">
+<link rel="alternate" hreflang="en" href="https://wallace-sh-1218.github.io/dublane-sx-privacy/help/en/">
+<link rel="icon" href="../assets/brand/icon.png">
+<link rel="stylesheet" href="../assets/guide.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="./">
+      <img src="../assets/brand/wordmark-en.png" alt="Dublane">
+      <span class="tag">User Guide</span>
+    </a>
+    <nav>
+      <a class="hide-sm" href="#start">Quick start</a>
+      <a class="hide-sm" href="#faq">FAQ</a>
+      <a class="hide-sm" href="https://wallace-sh-1218.github.io/dublane-sx-privacy/">Privacy</a>
+      <span class="lang"><a href="../">中文</a><a class="on" href="./">EN</a></span>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Dublane · User Guide</div>
+    <h1>Make any video<br>speak your language</h1>
+    <p class="lead">Import once. Dublane segments, transcribes, translates and dubs entirely on your Mac,
+      then exports the finished cut. No account, no uploads, no queue.</p>
+    <div class="cta">
+      <a class="btn" href="#start">Get started</a>
+      <a class="btn ghost" href="#intro">Watch the 20s intro</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>100%</b><span>On-device; media never leaves your disk</span></div>
+      <div class="stat"><b>4 steps</b><span>Extract · segment · transcribe · translate</span></div>
+      <div class="stat"><b>3 free</b><span>exports, unlimited with Pro</span></div>
+    </div>
+    <div class="heroMedia">
+      <div class="glow"></div>
+      <figure class="media">
+        <img src="../assets/shots/en-main.webp" alt="Dublane main window" width="1800" height="1350">
+      </figure>
+    </div>
+  </div>
+</div>
+
+<div class="wrap introBand" id="intro">
+  <figure class="media">
+    <video data-autoplay autoplay muted loop playsinline poster="../assets/video/intro-en.jpg">
+      <source src="../assets/video/intro-en.mp4" type="video/mp4">
+    </video>
+    <img class="poster" src="../assets/video/intro-en.jpg" alt="Dublane intro video">
+  </figure>
+  <p class="caption">A 20-second tour: automatic segmenting, translation and dubbing, then export.</p>
+</div>
+
+<div class="wrap layout">
+  <nav class="toc" aria-label="Contents">
+    <div class="h">Contents</div>
+    <ol>
+      <li><a href="#start">Quick start</a></li>
+      <li><a href="#import">Importing</a></li>
+      <li><a href="#analysis">AI analysis</a></li>
+      <li><a href="#timeline">Timeline</a></li>
+      <li><a href="#dubbing">Voices</a></li>
+      <li><a href="#subtitles">Subtitles</a></li>
+      <li><a href="#export">Export</a></li>
+      <li><a href="#tracks">Tracks &amp; view</a></li>
+      <li><a href="#system">System Check</a></li>
+      <li><a href="#settings">Settings</a></li>
+      <li><a href="#keys">Shortcuts</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ol>
+  </nav>
+
+  <main>
+
+    <section id="start" data-reveal>
+      <h2>Quick start</h2>
+      <p class="sub">Three steps to a finished cut. Before the first run, download the speech models you need in System Check.</p>
+      <div class="grid3">
+        <div class="card">
+          <div class="num">1</div>
+          <b>Import a video</b>
+          <p>Click “Add Video” in the top-left and pick a local video or audio file. It is read in place — never copied to a cloud.</p>
+        </div>
+        <div class="card">
+          <div class="num">2</div>
+          <b>Run AI analysis</b>
+          <p>Click the play icon on the video row, choose the spoken language and press Start. Segments, source text and translations fill the table.</p>
+        </div>
+        <div class="card">
+          <div class="num">3</div>
+          <b>Preview and export</b>
+          <p>Check timing and dubbing on the timeline, then hit Export in the top-right: video, audio-only or subtitles.</p>
+        </div>
+      </div>
+      <figure>
+        <div class="media">
+          <img src="../assets/shots/en-main.webp" alt="Dublane main window: video list, dual preview, segment table and timeline" loading="lazy" width="1800" height="1350">
+        </div>
+        <figcaption class="caption">The main window: video library on the left, Original / Dub Preview and the segment table in the middle, timeline at the bottom.</figcaption>
+      </figure>
+    </section>
+
+    <section id="import" data-reveal>
+      <h2>Importing</h2>
+      <p class="sub">Common video and audio formats are supported. Duration, waveforms and thumbnails are generated on import.</p>
+      <ul class="list">
+        <li><b>Video</b>: MP4, MOV, MKV, AVI, WebM, M4V</li>
+        <li><b>Audio</b>: MP3, WAV, M4A, AAC, FLAC, OGG</li>
+        <li><b>Where files live</b>: your media stays where it is; project data (segments, dubs, subtitles) is stored in the app’s own project folder</li>
+      </ul>
+      <div class="note"><b>File access:</b> if you later move or rename the source, the preview offers “Choose file again”.
+        Pick the same file and playback resumes — tracks, segments and dubs are kept.</div>
+    </section>
+
+    <section id="analysis" data-reveal>
+      <h2>AI analysis</h2>
+      <p class="sub">One run does four things, all on this Mac. The first translation starts the local model, which usually takes 15–30 seconds.</p>
+      <figure>
+        <div class="media">
+          <video data-autoplay autoplay muted loop playsinline poster="../assets/video/analysis-en.jpg">
+            <source src="../assets/video/analysis-en.mp4" type="video/mp4">
+          </video>
+          <img class="poster" src="../assets/video/analysis-en.jpg" alt="AI analysis in four steps">
+        </div>
+        <figcaption class="caption">Extract audio → VAD + segments → speech to text → translate.</figcaption>
+      </figure>
+      <ul class="list">
+        <li><b>Spoken language</b>: pick what the video actually says; auto-detect is fine when unsure</li>
+        <li><b>Translate</b>: on by default; the target language comes from Settings → Dubbing Language</li>
+        <li><b>Re-analyse</b>: clears this project’s generated audio, segments and translations, then runs again</li>
+      </ul>
+      <div class="note"><b>Tip:</b> you can close the window while analysis runs — the job keeps going in the background.</div>
+    </section>
+
+    <section id="timeline" data-reveal>
+      <h2>Timeline editing</h2>
+      <p class="sub">A clip block is the time range of one dub. Every edit goes into the undo history.</p>
+      <figure>
+        <div class="media">
+          <video data-autoplay autoplay muted loop playsinline poster="../assets/video/timeline-en.jpg">
+            <source src="../assets/video/timeline-en.mp4" type="video/mp4">
+          </video>
+          <img class="poster" src="../assets/video/timeline-en.jpg" alt="Timeline editing">
+        </div>
+      </figure>
+      <ul class="list">
+        <li><b>Select</b>: click a clip; double-click to open the segment editor</li>
+        <li><b>Move</b>: drag the block itself; hold <kbd>Ctrl</kbd> to bypass snapping</li>
+        <li><b>Trim</b>: drag the left or right edge</li>
+        <li><b>Split / trim at playhead</b>: the scissors, trim-left and trim-right buttons in the toolbar</li>
+        <li><b>Merge</b>: select adjacent segments and press merge</li>
+        <li><b>Hide / restore</b>: hidden clips stay in the list and can be restored anytime</li>
+        <li><b>Lock</b>: locked clips cannot be dragged or trimmed</li>
+        <li><b>Nudge</b>: select a clip and press <kbd>←</kbd> <kbd>→</kbd>; the step is chosen in the toolbar (10 ms by default)</li>
+        <li><b>Undo / redo</b>: <kbd>⌘Z</kbd> / <kbd>⇧⌘Z</kbd>, also available from the Edit menu</li>
+      </ul>
+    </section>
+
+    <section id="dubbing" data-reveal>
+      <h2>Voices and dubbing</h2>
+      <p class="sub">Each segment can have its own voice, speed and gain — including a clone of your own voice.</p>
+      <ul class="list">
+        <li><b>Voice</b>: choose a character or an app-wide voice in the segment editor, preview, then apply</li>
+        <li><b>Clone a voice</b>: import a clean 5–30 second sample, name it, and reuse it across projects</li>
+        <li><b>Segment gain</b>: up to 500% per clip; export mix up to 200% with automatic limiting above 200%</li>
+        <li><b>Character Manager</b>: group voices by project or app, with avatars and animation previews</li>
+      </ul>
+      <div class="note"><b>Please note:</b> only clone voices you have permission to use. You are responsible for how exported content is used.</div>
+    </section>
+
+    <section id="subtitles" data-reveal>
+      <h2>Subtitles</h2>
+      <p class="sub">Subtitles come from the segment table: source text, translation, or both.</p>
+      <ul class="list">
+        <li><b>Style</b>: size, colour, outline, background, position (bottom / centre / top)</li>
+        <li><b>Output</b>: burn into the picture, export a sidecar SRT, or both</li>
+        <li><b>Fonts</b>: system fonts by default; drop your own font into the app’s fonts folder to use it</li>
+      </ul>
+    </section>
+
+    <section id="export" data-reveal>
+      <h2>Export</h2>
+      <p class="sub">Three output types: the full video, audio only, or subtitle files only.</p>
+      <figure>
+        <div class="media">
+          <video data-autoplay autoplay muted loop playsinline poster="../assets/video/export-en.jpg">
+            <source src="../assets/video/export-en.mp4" type="video/mp4">
+          </video>
+          <img class="poster" src="../assets/video/export-en.jpg" alt="Export dialog">
+        </div>
+      </figure>
+      <ul class="list">
+        <li><b>Mix volume</b>: 0–200%; above 200% a limiter is added automatically to avoid clipping</li>
+        <li><b>Subtitles</b>: burn in, export SRT, or keep both</li>
+        <li><b>Advanced</b>: codec, channels and loudness live under Advanced</li>
+        <li><b>Count</b>: free builds include 3 exports; Pro removes the limit</li>
+      </ul>
+      <figure>
+        <div class="media">
+          <img src="../assets/shots/en-export.webp" alt="Export dialog: output type, mix volume, subtitles and advanced settings" loading="lazy" width="1800" height="1350">
+        </div>
+        <figcaption class="caption">Export settings are remembered on this Mac.</figcaption>
+      </figure>
+    </section>
+
+    <section id="tracks" data-reveal>
+      <h2>Tracks and view</h2>
+      <p class="sub">Fine-tune editing density and on-screen detail in the multi-track view.</p>
+      <ul class="list">
+        <li><b>Lane height</b>: the height button in the toolbar — 1x / 1.5x / 2x</li>
+        <li><b>Horizontal zoom</b>: 1x to 8x, handy for very short clips</li>
+        <li><b>Waveform opacity</b>: the percentage control on the right of the toolbar</li>
+        <li><b>Segment numbers</b>: the <b>#</b> icon shows the ordinal on every clip of every track; off means no numbers anywhere</li>
+        <li><b>Monitor / mute</b>: the headphone icon in the lane header decides whether that track joins the preview and export mix</li>
+      </ul>
+    </section>
+
+    <section id="system" data-reveal>
+      <h2>System Check and models</h2>
+      <p class="sub">The shield icon in the top bar opens System Check: bundled tools plus the models you download.</p>
+      <figure>
+        <div class="media">
+          <img src="../assets/shots/en-system.webp" alt="System Check: TTS models, speech recognition model and download state" loading="lazy" width="1800" height="1350">
+        </div>
+        <figcaption class="caption">Each row offers download, download-address and help; downloaded models can be deleted.</figcaption>
+      </figure>
+      <ul class="list">
+        <li><b>TTS model</b>: Q8 (smaller, faster) or F16 (larger, finer); the acoustic model is shared</li>
+        <li><b>Speech recognition</b>: Small / Medium / Large — pick for your machine; only what you need</li>
+        <li><b>Translation model</b>: optional; the Gemma terms must be accepted before the first download</li>
+        <li><b>Delete a model</b>: the trash icon on a downloaded row removes the file after a confirmation; download again anytime</li>
+        <li><b>Download address</b>: built-in by default; use the link icon to switch to a mirror or your own URL</li>
+      </ul>
+    </section>
+
+    <section id="settings" data-reveal>
+      <h2>Settings</h2>
+      <p class="sub">Language, appearance, dubbing target and default dub parameters.</p>
+      <figure>
+        <div class="media">
+          <img src="../assets/shots/en-settings.webp" alt="Settings: language, appearance, dubbing language, output directory and dub parameters" loading="lazy" width="1800" height="1350">
+        </div>
+      </figure>
+      <ul class="list">
+        <li><b>Language</b>: follow the system or pick one; applies immediately</li>
+        <li><b>Dubbing Language</b>: the target for translation and dubbing</li>
+        <li><b>Output Directory</b>: where exports go by default</li>
+        <li><b>AI Dub Parameters</b>: seed, temperature and voice guidance (CFG); a segment can override them in the editor</li>
+      </ul>
+    </section>
+
+    <section id="keys" data-reveal>
+      <h2>Shortcuts</h2>
+      <p class="sub">These work on the timeline and in the segment list. While a text field has focus, the field owns them.</p>
+      <table class="keys">
+        <tr><td><kbd>Space</kbd></td><td>Play / pause</td></tr>
+        <tr><td><kbd>⌘Z</kbd> / <kbd>⇧⌘Z</kbd></td><td>Undo / redo clip edits (text undo inside a field)</td></tr>
+        <tr><td><kbd>⌘C</kbd> / <kbd>⌘V</kbd></td><td>Copy / paste clips (text copy/paste inside a field)</td></tr>
+        <tr><td><kbd>←</kbd> / <kbd>→</kbd></td><td>Nudge the selected clip by the toolbar step</td></tr>
+        <tr><td><kbd>Esc</kbd></td><td>Leave full-screen preview</td></tr>
+      </table>
+    </section>
+
+    <section id="faq" data-reveal>
+      <h2>FAQ</h2>
+
+      <details class="faq">
+        <summary>The preview says the file must be opened again.</summary>
+        <p>The source was moved or renamed, or macOS revoked file access after an app update. Choose “Choose file again”,
+          pick the same file and playback resumes — tracks, segments and dubs are kept.</p>
+      </details>
+
+      <details class="faq">
+        <summary>Analysis says a model is missing.</summary>
+        <p>Open System Check from the shield icon and press Download on the matching row. The first download is large,
+          so use a stable connection; the row shows “Downloaded” when it finishes.</p>
+      </details>
+
+      <details class="faq">
+        <summary>What are the free limits?</summary>
+        <p>Free builds can export 3 finished files. Pro removes the export limit. Models, analysis and editing are not limited.</p>
+      </details>
+
+      <details class="faq">
+        <summary>Where do I change the translation target?</summary>
+        <p>Settings → Dubbing Language. Run Translate again (or re-analyse) to regenerate translations and dubs in the new language.</p>
+      </details>
+
+      <details class="faq">
+        <summary>Does it work offline?</summary>
+        <p>Yes. Once the models are downloaded, segmenting, transcription, translation, dubbing and export all run locally.</p>
+      </details>
+
+      <details class="faq">
+        <summary>Is my media uploaded?</summary>
+        <p>No. There is no account system and no media upload; apart from model downloads the app does not need the network.
+          See the <a href="https://wallace-sh-1218.github.io/dublane-sx-privacy/">privacy policy</a>.</p>
+      </details>
+    </section>
+
+  </main>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 Dublane SX</span>
+    <span class="spacer"></span>
+    <a href="https://wallace-sh-1218.github.io/dublane-sx-privacy/">Privacy policy</a>
+    <a href="mailto:xmediaframework@163.com">xmediaframework@163.com</a>
+  </div>
+</footer>
+
+<script src="../assets/guide.js"></script>
+</body>
+</html>
