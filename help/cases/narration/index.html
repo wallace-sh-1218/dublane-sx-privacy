@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>案例 01 · 旁白介绍 — Dublane 使用案例</title>
+<meta name="description" content="Dublane 案例：用一条旁白轨和一条 BGM 轨给无声视频加解说，导出中文 / English、带字幕与不带字幕的 4 个成品，附原素材与界面截图。">
+<meta name="robots" content="index, follow">
+<link rel="alternate" hreflang="zh-CN" href="https://wallace-sh-1218.github.io/dublane-sx-privacy/help/cases/narration/">
+<link rel="alternate" hreflang="en" href="https://wallace-sh-1218.github.io/dublane-sx-privacy/help/en/cases/narration/">
+<link rel="icon" href="../../assets/brand/icon.png">
+<link rel="stylesheet" href="../../assets/guide.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="../../">
+      <img src="../../assets/brand/wordmark-zh.png" alt="Dublane · 声巷">
+      <span class="tag">使用案例 01</span>
+    </a>
+    <nav>
+      <a class="hide-sm" href="../../">使用指南</a>
+      <a class="hide-sm" href="../">全部案例</a>
+      <a class="hide-sm" href="https://wallace-sh-1218.github.io/dublane-sx-privacy/">隐私政策</a>
+      <span class="lang"><a class="on" href="./">中文</a><a href="../../en/cases/narration/">EN</a></span>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Dublane · 使用案例 01</div>
+    <h1>让无声画面<br>开口说话</h1>
+    <p class="lead">一段 9.5 秒的 4K 樱花空镜，素材本身没有任何人声。用一条旁白轨写解说，再加一条 BGM 轨铺底噪，
+      最后导出中文和 English、带字幕与不带字幕共 4 个成品 —— 全程在本机完成。</p>
+    <div class="cta">
+      <a class="btn" href="#result">看成品</a>
+      <a class="btn ghost" href="#steps">看制作步骤</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>4 段</b><span>旁白轨上的解说片段</span></div>
+      <div class="stat"><b>2 条轨</b><span>旁白轨 + BGM 轨</span></div>
+      <div class="stat"><b>4 个成品</b><span>中 / EN × 有 / 无字幕</span></div>
+    </div>
+    <div class="heroMedia">
+      <div class="glow"></div>
+      <figure class="media">
+        <video controls playsinline preload="none" poster="../../assets/cases/narration/zh-sub.jpg">
+          <source src="../../assets/cases/narration/zh-sub.mp4" type="video/mp4">
+        </video>
+      </figure>
+      <p class="caption">成品示例：中文旁白 + 硬字幕（点击播放，有声音）。</p>
+    </div>
+  </div>
+</div>
+
+<div class="wrap layout">
+  <nav class="toc" aria-label="目录">
+    <div class="h">目录</div>
+    <ol>
+      <li><a href="#result">成品</a></li>
+      <li><a href="#steps">制作过程</a></li>
+      <li><a href="#tracks">轨道怎么搭</a></li>
+      <li><a href="#subs">字幕怎么来的</a></li>
+      <li><a href="#reuse">可复用场景</a></li>
+      <li><a href="#related">相关指南</a></li>
+    </ol>
+    <a class="tocCase" href="../">
+      <b>全部使用案例</b>
+      <span>返回案例目录</span>
+    </a>
+  </nav>
+
+  <main>
+
+    <section id="result" data-reveal>
+      <h2>成品</h2>
+      <p class="sub">同一段画面，四种交付形态。下面的视频都是 Dublane 在本机导出的真实文件。</p>
+      <div class="videoGrid">
+        <article class="videoCard">
+          <div class="media">
+            <video controls playsinline preload="none" poster="../../assets/cases/narration/zh.jpg">
+              <source src="../../assets/cases/narration/zh.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="meta">
+            <div class="flags"><span class="chip accent">中文</span><span class="chip">无字幕</span></div>
+            <b>中文旁白</b>
+            <span>旁白 + BGM，字幕不烧进画面。</span>
+          </div>
+        </article>
+        <article class="videoCard">
+          <div class="media">
+            <video controls playsinline preload="none" poster="../../assets/cases/narration/zh-sub.jpg">
+              <source src="../../assets/cases/narration/zh-sub.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="meta">
+            <div class="flags"><span class="chip accent">中文</span><span class="chip">字幕烧录</span></div>
+            <b>中文旁白 + 字幕</b>
+            <span>解说文案硬字幕，直接固定在画面上。</span>
+          </div>
+        </article>
+        <article class="videoCard">
+          <div class="media">
+            <video controls playsinline preload="none" poster="../../assets/cases/narration/en.jpg">
+              <source src="../../assets/cases/narration/en.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="meta">
+            <div class="flags"><span class="chip accent">English</span><span class="chip">no subtitles</span></div>
+            <b>English narration</b>
+            <span>The same footage and the same BGM, narrated in English.</span>
+          </div>
+        </article>
+        <article class="videoCard">
+          <div class="media">
+            <video controls playsinline preload="none" poster="../../assets/cases/narration/en-sub.jpg">
+              <source src="../../assets/cases/narration/en-sub.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="meta">
+            <div class="flags"><span class="chip accent">English</span><span class="chip">burned-in subtitles</span></div>
+            <b>English narration + subtitles</b>
+            <span>English voice with the English lines burned into the picture.</span>
+          </div>
+        </article>
+      </div>
+      <p class="caption">为网页加载速度，页面上的成品已转为 1080p；Dublane 导出的原始文件为 3840 × 2160。</p>
+
+      <div class="sourceRow">
+        <figure class="media">
+          <video controls playsinline preload="none" poster="../../assets/cases/narration/source.jpg">
+            <source src="../../assets/cases/narration/source.mp4" type="video/mp4">
+          </video>
+        </figure>
+        <div>
+          <b>原始素材（无声）</b>
+          <p>3840 × 2160 / 25 fps / 9.52 秒，音轨是数字静音。上面的四个成片全部由 Dublane 在本机生成：
+            解说是合成的人声，BGM 是单独一条轨道，字幕来自片段表里的文案。</p>
+          <div class="chips">
+            <span class="chip">4K 源</span>
+            <span class="chip">0 dB 静音轨</span>
+            <span class="chip">导出为 1080p 网页版</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="steps" data-reveal>
+      <h2>制作过程</h2>
+      <p class="sub">六个步骤，全部在 Dublane 主界面里完成。</p>
+      <div class="grid3">
+        <div class="card">
+          <div class="num">1</div>
+          <b>导入无声视频</b>
+          <p>点左上角「添加视频」，选中这段 4K 樱花空镜。Dublane 原地读取文件，生成缩略图、波形和时长信息。</p>
+        </div>
+        <div class="card">
+          <div class="num">2</div>
+          <b>新建旁白轨</b>
+          <p>在时间线左侧点「+」新建一条旁白轨，起名「中文旁白」。旁白轨和普通配音轨一样，可以整轨静音、锁定、改音量。</p>
+        </div>
+        <div class="card">
+          <div class="num">3</div>
+          <b>按画面写解说</b>
+          <p>在片段列表里按画面节奏切 4 段，逐段写解说文案并设置起止时间：「春风拂枝头」「白花瓣在晴空下轻摇」「这是春天写给人间的温柔情书」「每瓣，都是来不及说的喜欢。」</p>
+        </div>
+        <div class="card">
+          <div class="num">4</div>
+          <b>选音色并生成配音</b>
+          <p>打开片段编辑器挑一个音色试听，确认后生成。生成完成的旁白会带着波形回到旁白轨上，可以直接拖动、裁剪、微调。</p>
+        </div>
+        <div class="card">
+          <div class="num">5</div>
+          <b>加一条 BGM 轨</b>
+          <p>再新建一条轨道导入背景音乐，把音量压在人声之下铺满全片。旁白和音乐分开，改文案或调音量都不用重做另一边。</p>
+        </div>
+        <div class="card">
+          <div class="num">6</div>
+          <b>导出 4 个成品</b>
+          <p>导出对话框里选「视频」；字幕可选烧录进画面或另存 SRT。先导出中文版，再把旁白轨换成英文文案，导出英文版 —— 一次工程，四个成品。</p>
+        </div>
+      </div>
+      <figure>
+        <div class="media">
+          <img src="../../assets/cases/narration/app-zh.webp" alt="Dublane 主界面：中文旁白片段表、预览与多轨时间线" loading="lazy" width="1800" height="1171">
+        </div>
+        <figcaption class="caption">主界面：上面是「原视频 / 配音预览」双画面，中间是片段表（ID、时间范围、旁白文案），下面是多轨时间线。</figcaption>
+      </figure>
+    </section>
+
+    <section id="tracks" data-reveal>
+      <h2>轨道怎么搭</h2>
+      <p class="sub">这条工程一共 5 条轨道，每条各司其职 —— 靠轨道的监听开关决定谁进混音。</p>
+      <figure>
+        <div class="media">
+          <img src="../../assets/cases/narration/timeline-zh.webp" alt="时间线：原视频音轨、中文旁白轨、英文旁白轨与 BGM 轨" loading="lazy" width="2200" height="480">
+        </div>
+        <figcaption class="caption">时间线细节：轨道头从左到右是名称、监听（耳机）、锁定和更多操作；片段块上的圆点标着片段 ID。</figcaption>
+      </figure>
+      <ul class="list">
+        <li><b>原视频音轨</b>：素材自带的音轨，本例里是静音；可以整轨静音，不参与混音</li>
+        <li><b>Chinese（中文旁白轨）</b>：本案例的主角，4 段解说；导出中文成品时打开监听</li>
+        <li><b>English…（英文旁白轨）</b>：同一段解说的英文版，导出英文成品时打开监听、导出中文成品时静音</li>
+        <li><b>bgm（BGM 轨）</b>：整段铺底的背景音乐，音量比人声低，导出时一直参与混音</li>
+        <li><b>片段 ID 圆点</b>：打开工具条的「#」开关，每个片段都会标出编号，方便和片段表一一对应</li>
+        <li><b>吸附</b>：工具条可以选「Zero-cross」吸附，片段首尾会贴到波形过零点，拼接时听感更自然</li>
+      </ul>
+      <div class="note"><b>为什么要分轨：</b>旁白和 BGM 分开之后，改一句文案只重新生成那一个片段；调整背景音乐音量也不会影响已经做好的配音。</div>
+    </section>
+
+    <section id="subs" data-reveal>
+      <h2>字幕怎么来的</h2>
+      <p class="sub">字幕不需要另外写 —— 内容直接来自片段表。</p>
+      <ul class="list">
+        <li><b>内容来源</b>：原文、译文，或两者同时显示；本案例用的是旁白轨上的文案</li>
+        <li><b>两种输出</b>：烧录进画面（固定在成片里），或导出独立的 SRT / ASS 文件，也可以两者都要</li>
+        <li><b>样式</b>：字号、颜色、描边、背景、位置（底部 / 居中 / 顶部）都在导出窗口里调</li>
+        <li><b>字体</b>：可选内置中文字体，也可以在导出窗口点「添加字体」导入自己的 TTF / OTF / TTC</li>
+        <li><b>所见即所得</b>：导出窗口里的预览帧按最终输出分辨率渲染，缩放方式和黑边都与成片一致</li>
+      </ul>
+    </section>
+
+    <section id="reuse" data-reveal>
+      <h2>可复用场景</h2>
+      <p class="sub">同样的搭法，可以直接搬到这些内容上。</p>
+      <div class="chips">
+        <span class="chip">产品宣传片</span>
+        <span class="chip">旅行 vlog</span>
+        <span class="chip">教程录屏解说</span>
+        <span class="chip">展厅与房产导览</span>
+        <span class="chip">课程与知识科普</span>
+        <span class="chip">活动回顾短片</span>
+        <span class="chip">无障碍旁白版本</span>
+      </div>
+      <div class="note"><b>一条通用规律：</b>画面负责讲故事，旁白轨负责说清楚，BGM 轨负责定情绪。把三者分成独立的轨道，任何一个想改，都不用重做整条片子。</div>
+    </section>
+
+    <section id="related" data-reveal>
+      <h2>相关指南</h2>
+      <p class="sub">本案例用到的主要功能，指南里有完整说明。</p>
+      <ul class="related">
+        <li><b><a href="../../#timeline">时间线编辑</a></b><span>片段块的移动、裁剪、分割、合并、锁定与撤销</span></li>
+        <li><b><a href="../../#dubbing">配音与音色</a></b><span>音色选择、克隆音色、语速与段级增益</span></li>
+        <li><b><a href="../../#subtitles">字幕</a></b><span>字幕内容来源、样式与输出方式</span></li>
+        <li><b><a href="../../#export">导出</a></b><span>视频 / 纯音频 / 字幕三种输出，分辨率、码率与 HDR</span></li>
+        <li><b><a href="../../#tracks">轨道与视图</a></b><span>监听 / 静音、轨道高度、横向缩放与片段编号</span></li>
+      </ul>
+    </section>
+
+  </main>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 Dublane SX</span>
+    <span class="spacer"></span>
+    <a href="../">全部案例</a>
+    <a href="../../">使用指南</a>
+    <a href="https://wallace-sh-1218.github.io/dublane-sx-privacy/">隐私政策</a>
+    <a href="mailto:xmediaframework@163.com">xmediaframework@163.com</a>
+  </div>
+</footer>
+
+<script src="../../assets/guide.js"></script>
+</body>
+</html>
