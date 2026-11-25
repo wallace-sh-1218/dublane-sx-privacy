@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>案例 02 · 添加字幕 — Dublane 使用案例</title>
+<meta name="description" content="Dublane 案例：30 秒英文访谈，识别、翻译并校对 6 段对白，在导出窗口设置双语字幕并烧录进画面，附原片、过程录屏与界面截图。">
+<meta name="robots" content="index, follow">
+<link rel="alternate" hreflang="zh-CN" href="https://wallace-sh-1218.github.io/dublane-sx-privacy/help/cases/subtitles/">
+<link rel="alternate" hreflang="en" href="https://wallace-sh-1218.github.io/dublane-sx-privacy/help/en/cases/subtitles/">
+<link rel="icon" href="../../assets/brand/icon.png">
+<link rel="stylesheet" href="../../assets/guide.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="../../">
+      <img src="../../assets/brand/wordmark-zh.png" alt="Dublane · 声巷">
+      <span class="tag">使用案例 02</span>
+    </a>
+    <nav>
+      <a class="hide-sm" href="../../">使用指南</a>
+      <a class="hide-sm" href="../">全部案例</a>
+      <a class="hide-sm" href="../../../">隐私政策</a>
+      <span class="lang"><a class="on" href="./">中文</a><a href="../../en/cases/subtitles/">EN</a></span>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Dublane · 使用案例 02</div>
+    <h1>给视频，<br>加上字幕</h1>
+    <p class="lead">一段 30 秒的英文访谈，6 句对白。识别、翻译、校对之后，在导出窗口把双语字幕烧进画面 ——
+      译文在上、原文在下，全程在本机完成。</p>
+    <div class="cta">
+      <a class="btn" href="#result">看成品</a>
+      <a class="btn ghost" href="#steps">看制作步骤</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>30 秒</b><span>原片时长，1080p</span></div>
+      <div class="stat"><b>6 条片段</b><span>识别出的对白段落</span></div>
+      <div class="stat"><b>双语字幕</b><span>译文在上，原文在下</span></div>
+    </div>
+    <div class="heroMedia">
+      <div class="glow"></div>
+      <figure class="media">
+        <video controls playsinline preload="none" poster="../../assets/cases/subtitles/sub-zh.jpg">
+          <source src="../../assets/cases/subtitles/sub-zh.mp4" type="video/mp4">
+        </video>
+      </figure>
+      <p class="caption">成品示例：中英双语字幕，烧录进画面（点击播放，有声音）。</p>
+    </div>
+  </div>
+</div>
+
+<div class="wrap layout">
+  <nav class="toc" aria-label="目录">
+    <div class="h">目录</div>
+    <ol>
+      <li><a href="#result">成品</a></li>
+      <li><a href="#steps">制作过程</a></li>
+      <li><a href="#subs">字幕怎么设</a></li>
+      <li><a href="#reuse">可复用场景</a></li>
+      <li><a href="#related">相关指南</a></li>
+    </ol>
+    <a class="tocCase" href="../">
+      <b>全部使用案例</b>
+      <span>返回案例目录</span>
+    </a>
+  </nav>
+
+  <main>
+
+    <section id="result" data-reveal>
+      <h2>成品</h2>
+      <p class="sub">同一段素材的两个状态：原片，和烧录了双语字幕的成品。</p>
+      <div class="videoGrid">
+        <article class="videoCard">
+          <div class="media">
+            <video controls playsinline preload="none" poster="../../assets/cases/subtitles/source.jpg">
+              <source src="../../assets/cases/subtitles/source.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="meta">
+            <div class="flags"><span class="chip accent">原片</span><span class="chip">无字幕</span></div>
+            <b>原始素材</b>
+            <span>1920 × 1080 / 23.976 fps / 30 秒，英文原声，画面里没有任何文字。</span>
+          </div>
+        </article>
+        <article class="videoCard">
+          <div class="media">
+            <video controls playsinline preload="none" poster="../../assets/cases/subtitles/sub-zh.jpg">
+              <source src="../../assets/cases/subtitles/sub-zh.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="meta">
+            <div class="flags"><span class="chip accent">中文</span><span class="chip">字幕烧录</span></div>
+            <b>中文双语字幕</b>
+            <span>译文在上、原文在下，字幕直接烧进画面；原声保留。</span>
+          </div>
+        </article>
+      </div>
+      <p class="caption">页面上的视频按网页加载做了压缩，分辨率与成片一致（1920 × 1080）。</p>
+
+      <div class="note"><b>换个语言看：</b>英文页用的是同一段素材的韩语版 —— 同一个工程，只改目标语言，字幕和成品都会跟着变。</div>
+    </section>
+
+    <section id="steps" data-reveal>
+      <h2>制作过程</h2>
+      <p class="sub">六个步骤，从导入到导出，全部在 Dublane 主界面里完成。</p>
+      <div class="grid3">
+        <div class="card">
+          <div class="num">1</div>
+          <b>导入视频</b>
+          <p>点左侧视频库下方的「添加视频」，选中这段 30 秒访谈。Dublane 原地读取文件，生成缩略图、波形和时长信息。</p>
+        </div>
+        <div class="card">
+          <div class="num">2</div>
+          <b>运行 AI 分析</b>
+          <p>点视频行右侧的播放图标，语言选 English、目标语言选中文，开始分析。提取音频、VAD 分段、语音识别、翻译四步自动跑完。</p>
+        </div>
+        <div class="card">
+          <div class="num">3</div>
+          <b>校对译文</b>
+          <p>片段表里逐条对照原文改译文。改一条只影响那一条，不需要重新识别，也不用重新生成配音。</p>
+        </div>
+        <div class="card">
+          <div class="num">4</div>
+          <b>确认字幕轨道</b>
+          <p>时间线轨道区里的字幕轨就是这次的字幕来源，片段表里显示的就是它。想换一套文案，换一条字幕轨即可。</p>
+        </div>
+        <div class="card">
+          <div class="num">5</div>
+          <b>在导出窗口设置字幕</b>
+          <p>打开「导出 → 字幕」，选字幕轨道、双语顺序「译文在上」，再调位置、边距和字号。预览帧按输出分辨率渲染，所见即所得。</p>
+        </div>
+        <div class="card">
+          <div class="num">6</div>
+          <b>导出成品</b>
+          <p>输出类型选「视频」，字幕选「烧录进画面」。需要单独的字幕文件时，同一窗口也能导出 SRT / ASS。</p>
+        </div>
+      </div>
+
+      <figure>
+        <div class="media">
+          <video controls playsinline preload="metadata" poster="../../assets/cases/subtitles/steps-input-zh.jpg">
+            <source src="../../assets/cases/subtitles/steps-input-zh.mp4" type="video/mp4">
+          </video>
+        </div>
+        <figcaption class="caption">导入 → AI 分析四步 → 译文自动填进片段表（约 74 秒，无声）。</figcaption>
+      </figure>
+
+      <figure>
+        <div class="media">
+          <video controls playsinline preload="metadata" poster="../../assets/cases/subtitles/steps-export-zh.jpg">
+            <source src="../../assets/cases/subtitles/steps-export-zh.mp4" type="video/mp4">
+          </video>
+        </div>
+        <figcaption class="caption">导出窗口里设置字幕：轨道、双语顺序、位置、边距与字号，最后导出成品（约 112 秒，无声）。</figcaption>
+      </figure>
+
+      <figure>
+        <div class="media">
+          <img src="../../assets/cases/subtitles/app-zh.webp" alt="Dublane 主界面：6 条片段的原文与中文译文、配音预览与多轨时间线" loading="lazy" width="1800" height="1345">
+        </div>
+        <figcaption class="caption">AI 分析完成后的主界面：中间是 6 条片段的原文与中文译文，底部时间线上的片段逐段对得上。</figcaption>
+      </figure>
+    </section>
+
+    <section id="subs" data-reveal>
+      <h2>字幕怎么设</h2>
+      <p class="sub">字幕内容来自片段表，样式和输出方式在导出窗口里调。</p>
+      <ul class="list">
+        <li><b>内容来源</b>：原文、译文，或两者同时显示；本案例用双语，顺序是「译文在上、原文在下」</li>
+        <li><b>位置与边距</b>：底部居中，左右边距 5%，垂直边距 4.5%，长句也不会顶到画面边缘</li>
+        <li><b>字号</b>：主语言与第二语言分别设字号；本例第二语言 100%，两种文字视觉重量一致</li>
+        <li><b>字体</b>：可选内置字体，也可以在导出窗口点「添加字体」导入自己的 TTF / OTF / TTC</li>
+        <li><b>输出方式</b>：烧录进画面、导出单独的 SRT / ASS，或两者都要</li>
+        <li><b>改一句只重导</b>：调一条译文不会影响其他片段，也不需要重新识别或重新配音</li>
+      </ul>
+      <div class="note"><b>设置会跟着工程走：</b>字幕轨道、双语顺序、字体和边距都保存在项目里，下次打开还是同一套，不用担心重新调一遍。</div>
+    </section>
+
+    <section id="reuse" data-reveal>
+      <h2>可复用场景</h2>
+      <p class="sub">只要能拿到「原声」，识别、翻译和字幕这几步都可以交给 Dublane。</p>
+      <div class="chips">
+        <span class="chip">外语访谈</span>
+        <span class="chip">课程与讲座</span>
+        <span class="chip">产品演示</span>
+        <span class="chip">展会与发布会</span>
+        <span class="chip">跨境宣传片</span>
+        <span class="chip">纪录片片段</span>
+        <span class="chip">无障碍字幕版</span>
+      </div>
+      <div class="note"><b>一条通用规律：</b>识别负责把话说清楚，翻译负责换个语言，校对负责让它像人话。三步分开之后，改哪一步都不用从头再来。</div>
+    </section>
+
+    <section id="related" data-reveal>
+      <h2>相关指南</h2>
+      <p class="sub">本案例用到的主要功能，指南里有完整说明。</p>
+      <ul class="related">
+        <li><b><a href="../../#subtitles">字幕</a></b><span>字幕内容来源、样式、字体与输出方式</span></li>
+        <li><b><a href="../../#export">导出</a></b><span>视频 / 纯音频 / 字幕三种输出，分辨率与码率</span></li>
+        <li><b><a href="../../#analysis">AI 分析</a></b><span>提取、分段、识别、翻译四步与重新分析</span></li>
+        <li><b><a href="../../#timeline">时间线编辑</a></b><span>片段块的移动、裁剪、分割、合并与锁定</span></li>
+      </ul>
+    </section>
+
+  </main>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 Dublane SX</span>
+    <span class="spacer"></span>
+    <a href="../">全部案例</a>
+    <a href="../../">使用指南</a>
+    <a href="../../../">隐私政策</a>
+    <a href="mailto:xmediaframework@163.com">xmediaframework@163.com</a>
+  </div>
+</footer>
+
+<script src="../../assets/guide.js"></script>
+</body>
+</html>
