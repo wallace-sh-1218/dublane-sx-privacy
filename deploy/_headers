@@ -7,10 +7,18 @@
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
 
-# Media and screenshots never change under the same name. guide.css / guide.js
-# are deliberately left out: they are not content-hashed, so they must expire.
+# Media and screenshots never change under the same name.
+# One path per block: Cloudflare only honours the last path line of a block.
+# guide.css / guide.js are deliberately left out — they are not content-hashed,
+# so they must keep expiring.
 /help/assets/brand/*
+  Cache-Control: public, max-age=31536000, immutable
+
 /help/assets/shots/*
+  Cache-Control: public, max-age=31536000, immutable
+
 /help/assets/video/*
+  Cache-Control: public, max-age=31536000, immutable
+
 /help/assets/cases/*
   Cache-Control: public, max-age=31536000, immutable
