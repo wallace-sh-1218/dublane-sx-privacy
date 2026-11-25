@@ -1,0 +1,5 @@
+# The privacy policy used to have its own page; the site root is now the
+# policy. Kept as a permanent redirect for old links and for the App Store
+# listing, which points at privacy-policy.html.
+/privacy-policy.html  /  301
+/privacy-policy       /  301

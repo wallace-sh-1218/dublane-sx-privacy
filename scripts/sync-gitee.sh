@@ -11,6 +11,10 @@
 #   PUSH=0 scripts/sync-gitee.sh             # copy and commit, no push
 #   scripts/sync-gitee.sh /path/to/mirror    # alternate local mirror clone
 #
+# Legacy: Gitee Pages has been discontinued, so the Gitee repository is kept
+# only as an archive of the domestic copy. The published site is built for
+# Cloudflare Pages by scripts/build-cloudflare.sh.
+#
 set -euo pipefail
 
 SRC="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
