@@ -32,9 +32,9 @@
 <div class="hero">
   <div class="wrap">
     <div class="eyebrow">Dublane · 使用指南</div>
-    <h1>把任何视频，<br>变成你的语言</h1>
-    <p class="lead">导入一次，Dublane 在本机完成语音分段、识别、翻译与配音，再把成品导出。
-      没有账号、没有上传、没有排队。</p>
+    <h1>把任何视频，<br>变成你希望的<span class="nb">语言</span>·<span class="nb">字幕</span>·<span class="nb">声音</span></h1>
+    <p class="lead">导入一次，Dublane 在本机完成语音分段、识别、翻译与配音，再把成品导出：没有账号、没有上传、没有排队，也不消耗 Token。
+      AI 自动分析配合手动精修，输出更符合预期。</p>
     <div class="cta">
       <a class="btn" href="#start">开始使用</a>
       <a class="btn ghost" href="#intro">观看 20 秒介绍</a>
@@ -95,7 +95,7 @@
         <div class="card">
           <div class="num">1</div>
           <b>导入视频</b>
-          <p>点左上角「添加视频」，选择本地的视频或音频文件。文件会原地读取，不会复制到云端。</p>
+          <p>点击左侧视频库下方的「添加视频」，选择本地的视频或音频文件。文件原地读取，不会复制到云端。</p>
         </div>
         <div class="card">
           <div class="num">2</div>
@@ -108,6 +108,14 @@
           <p>在时间线检查节奏与配音，点右上「导出」选择视频、纯音频或字幕。</p>
         </div>
       </div>
+      <figure>
+        <div class="media">
+          <video controls playsinline preload="metadata" poster="assets/video/quickstart-zh.jpg">
+            <source src="assets/video/quickstart-zh.mp4" type="video/mp4">
+          </video>
+        </div>
+        <figcaption class="caption">快速开始演示（无声，约 1 分 45 秒）：导入视频 → AI 分析 → 检查时间线 → 导出成品。</figcaption>
+      </figure>
       <figure>
         <div class="media">
           <img src="assets/shots/zh-main.webp" alt="Dublane 主界面：左侧视频列表、双预览、片段列表与时间线" loading="lazy" width="1800" height="1350">
@@ -175,12 +183,13 @@
 
     <section id="dubbing" data-reveal>
       <h2>配音与音色</h2>
-      <p class="sub">每个片段可以单独选择音色、语速和增益，也可以克隆自己的声音。</p>
+      <p class="sub">每个片段可以单独选择音色与语速，也可以克隆自己的声音，或叠加音频特效、做人声分离降噪。</p>
       <ul class="list">
         <li><b>音色</b>：在片段编辑器里选择角色或应用音色库里的声音，试听后应用</li>
         <li><b>克隆音色</b>：导入一段干净的人声（建议 5–30 秒），命名后即可在所有项目里使用</li>
-        <li><b>段级增益</b>：单个片段最高可加到 500%；导出混音最高 200%，超过 200% 会自动限幅</li>
         <li><b>角色管理</b>：把音色按项目 / 应用分组，支持头像与试听</li>
+        <li><b>音频特效</b>：淡入、淡出、淡入淡出、响度标准化、高通（去低频）、低通（去高频）、压缩与混响，可按顺序叠加</li>
+        <li><b>人声分离降噪</b>：在原声轨或导入轨的轨道菜单里执行，生成「人声」与「伴奏」两条轨道，可去掉背景噪声；录制配音时也能开启降噪</li>
       </ul>
       <div class="note"><b>合规提示：</b>克隆他人声音前请取得授权；导出内容的使用责任由使用者承担。</div>
     </section>
