@@ -1,6 +1,10 @@
 (() => {
   const reveal = document.querySelectorAll("[data-reveal]");
   if ("IntersectionObserver" in window) {
+    // The threshold has to stay tiny. A case page's #steps is several thousand
+    // pixels tall, and 8% of it can be taller than the window: on a short
+    // window the ratio never reaches the threshold and the whole section stays
+    // at opacity 0. One percent is reached as soon as any real part shows.
     const ro = new IntersectionObserver(
       (entries) => {
         for (const e of entries) {
@@ -10,9 +14,23 @@
           }
         }
       },
-      { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.01 }
     );
     reveal.forEach((el) => ro.observe(el));
+
+    // Safety net: if the callback never fires (restored scroll position, a
+    // window that changed size), reveal whatever is already near the viewport.
+    // Content must never be permanently invisible.
+    window.setTimeout(() => {
+      for (const el of reveal) {
+        if (el.classList.contains("in")) continue;
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight * 1.2 && r.bottom > 0) {
+          el.classList.add("in");
+          ro.unobserve(el);
+        }
+      }
+    }, 1200);
   } else {
     reveal.forEach((el) => el.classList.add("in"));
   }
