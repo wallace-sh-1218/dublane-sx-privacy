@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>案例 03 · 给视频配音 — Dublane 使用案例</title>
+<meta name="description" content="Dublane 案例：22 秒中文短剧配成英文。整理 AI 分段、分离人声、按口型改写译文、克隆音色配音并对齐波纹、克隆字幕轨，最后导出成片，附原片、成片与过程录屏。">
+<meta name="robots" content="index, follow">
+<link rel="alternate" hreflang="zh-CN" href="https://wallace-sh-1218.github.io/dublane-sx-privacy/help/cases/dubbing/">
+<link rel="alternate" hreflang="en" href="https://wallace-sh-1218.github.io/dublane-sx-privacy/help/en/cases/dubbing/">
+<link rel="icon" href="../../assets/brand/icon.png">
+<link rel="stylesheet" href="../../assets/guide.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="../../">
+      <img src="../../assets/brand/wordmark-zh.png" alt="Dublane · 声巷">
+      <span class="tag">使用案例 03</span>
+    </a>
+    <nav>
+      <a class="hide-sm" href="../../">使用指南</a>
+      <a class="hide-sm" href="../">全部案例</a>
+      <a class="hide-sm" href="../../../">隐私政策</a>
+      <span class="lang"><a class="on" href="./">中文</a><a href="../../en/cases/dubbing/">EN</a></span>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Dublane · 使用案例 03</div>
+    <h1>原声中文，<br>英文配音</h1>
+    <p class="lead">一段 22 秒中文短剧，4 句对白。识别、翻译之后，按口型把台词改短、改顺，
+      用原声克隆音色配成英文，再把配音波纹对齐原声、加一条字幕轨，导出成片 —— 嘴型还是原来那个人。</p>
+    <div class="cta">
+      <a class="btn" href="#result">看成品</a>
+      <a class="btn ghost" href="#steps">看制作步骤</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>22 秒</b><span>原片时长，1280 × 720</span></div>
+      <div class="stat"><b>4 句对白</b><span>由 10 段碎句合并而来</span></div>
+      <div class="stat"><b>中文 → English</b><span>配音语种</span></div>
+    </div>
+    <div class="heroMedia">
+      <div class="glow"></div>
+      <figure class="media">
+        <video controls playsinline preload="none" poster="../../assets/cases/dubbing/dubbed.jpg">
+          <source src="../../assets/cases/dubbing/dubbed.mp4" type="video/mp4">
+        </video>
+      </figure>
+      <p class="caption">成品示例：英文配音，背景声保留，中英双语字幕烧录进画面（点击播放，有声音）。</p>
+    </div>
+  </div>
+</div>
+
+<div class="wrap layout">
+  <nav class="toc" aria-label="目录">
+    <div class="h">目录</div>
+    <ol>
+      <li><a href="#result">成品</a></li>
+      <li><a href="#steps">制作过程</a></li>
+      <li><a href="#align">配音怎么对齐</a></li>
+      <li><a href="#reuse">可复用场景</a></li>
+      <li><a href="#related">相关指南</a></li>
+    </ol>
+    <a class="tocCase" href="../">
+      <b>全部使用案例</b>
+      <span>返回案例目录</span>
+    </a>
+  </nav>
+
+  <main>
+
+    <section id="result" data-reveal>
+      <h2>成品</h2>
+      <p class="sub">同一段素材的两个状态：原片，和换成英文配音的成片。</p>
+      <div class="videoGrid">
+        <article class="videoCard">
+          <div class="media">
+            <video controls playsinline preload="none" poster="../../assets/cases/dubbing/source.jpg">
+              <source src="../../assets/cases/dubbing/source.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="meta">
+            <div class="flags"><span class="chip accent">原片</span><span class="chip">中文原声</span></div>
+            <b>原始素材</b>
+            <span>1280 × 720 / 30 fps / 22 秒，中文对白，画面自带中文字幕。</span>
+          </div>
+        </article>
+        <article class="videoCard">
+          <div class="media">
+            <video controls playsinline preload="none" poster="../../assets/cases/dubbing/dubbed.jpg">
+              <source src="../../assets/cases/dubbing/dubbed.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="meta">
+            <div class="flags"><span class="chip accent">中文 → English</span><span class="chip">双语字幕</span></div>
+            <b>英文配音成片</b>
+            <span>人声换成英文配音，环境声与配乐保留；中英双语字幕烧进画面。</span>
+          </div>
+        </article>
+      </div>
+      <p class="caption">页面上的视频按网页加载做了压缩，分辨率与成片一致（1280 × 720）。
+        两段都从第 4 帧开始：前 3 帧是上一场的残留画面，已经裁掉。</p>
+      <div class="note"><b>配音不是把原声整条盖掉：</b>先把原声拆成人声和背景声，再只替换人声 —— 见第 2 步。</div>
+    </section>
+
+    <section id="steps" data-reveal>
+      <h2>制作过程</h2>
+      <p class="sub">六步：先整理 AI 分出来的段落，再分离人声、改译文、配音对齐波纹、做字幕，最后导出。</p>
+      <div class="grid3">
+        <div class="card">
+          <div class="num">1</div>
+          <b>整理分段</b>
+          <p>识别的分段受语速和背景声影响，会长短不一。用裁剪与合并整理成完整台词，不改动时间点。</p>
+        </div>
+        <div class="card">
+          <div class="num">2</div>
+          <b>人声分离</b>
+          <p>把原声拆成人声轨和背景声轨；配音只替换人声，背景与音效留着。</p>
+        </div>
+        <div class="card">
+          <div class="num">3</div>
+          <b>校对译文</b>
+          <p>按口型改写译文：短句、缩略形式、能在同样的时长里念完，比逐字直译更重要。</p>
+        </div>
+        <div class="card">
+          <div class="num">4</div>
+          <b>配音对齐波纹</b>
+          <p>整段配音后，用语速、删除静音、插入静音，让配音波形尽量贴合原声波形。</p>
+        </div>
+        <div class="card">
+          <div class="num">5</div>
+          <b>克隆字幕轨</b>
+          <p>从配音轨复制一条字幕轨，再按语义重新分段，让每行字幕长度均匀。</p>
+        </div>
+        <div class="card">
+          <div class="num">6</div>
+          <b>导出成片</b>
+          <p>导出窗口里选「字幕轨」，把双语字幕烧进画面，输出视频。</p>
+        </div>
+      </div>
+
+      <h3>1 · 整理分段：把碎句拼回完整的台词</h3>
+      <p>AI 分析的分段是按语音切的：说得快、句子短，就会切得很碎；背景里有人声或音效，又可能几句话并成一段。
+        所以第一步不是配音，而是把段落整理成「一段 = 一句完整的话」。</p>
+      <ul class="list">
+        <li><b>碎句合并</b>：像「老公」「是因爲愛嗎」「是因爲責任嗎」这种各自成段的，合并回一句。</li>
+        <li><b>多余部分裁掉</b>：段首段尾的空白、气口，用裁剪去掉，别让它占着台词的时间。</li>
+        <li><b>时间点是准的</b>：分段的起止来自识别，和画面对得上；整段平移会让口型错位，
+          所以只在原边界上切、并，不要拖动分段。</li>
+        <li><b>先解锁</b>：分段默认是锁定的（轨道左侧的锁图标）；要裁剪、分割、合并或移动，先解锁。</li>
+      </ul>
+
+      <figure>
+        <div class="media">
+          <img src="../../assets/cases/dubbing/step1-timeline-before.webp" alt="调整前的时间线：10 段碎句，长短不一" loading="lazy" width="1800" height="252">
+        </div>
+        <figcaption class="caption">调整前：10 段碎句，最短 0.6 秒（「老公」），最长 2.7 秒。</figcaption>
+      </figure>
+
+      <figure>
+        <div class="media">
+          <img src="../../assets/cases/dubbing/step1-timeline-after.webp" alt="调整后的时间线：合并成 4 段完整台词" loading="lazy" width="1800" height="252">
+        </div>
+        <figcaption class="caption">调整后：合并成 4 段完整台词（10、11、12 是合并出来的新段，7 是原本就合适的一段）。
+          截图取自已配音的状态，所以能看到波形。</figcaption>
+      </figure>
+
+      <figure>
+        <div class="media">
+          <img src="../../assets/cases/dubbing/step1-segments-before.webp" alt="调整前的片段列表：10 条，原文与译文都是碎片" loading="lazy" width="1800" height="644">
+        </div>
+        <figcaption class="caption">片段列表 · 调整前：10 条，译文也是碎片（「Husband」「Is it because of love?」），没法拿来配音。</figcaption>
+      </figure>
+
+      <figure>
+        <div class="media">
+          <img src="../../assets/cases/dubbing/step1-segments-after.webp" alt="调整后的片段列表：4 条完整台词，译文已按配音改写" loading="lazy" width="1800" height="360">
+        </div>
+        <figcaption class="caption">片段列表 · 调整后：4 条完整台词，时间范围是原来几段的并集，起止时间没有被移动。</figcaption>
+      </figure>
+
+      <figure>
+        <div class="media">
+          <video controls playsinline preload="metadata" poster="../../assets/cases/dubbing/step1-split-merge.jpg">
+            <source src="../../assets/cases/dubbing/step1-split-merge.mp4" type="video/mp4">
+          </video>
+        </div>
+        <figcaption class="caption">解锁 → 裁掉多余空白 → 合并相邻碎句（约 53 秒，无声）。</figcaption>
+      </figure>
+
+      <h3>2 · 人声分离：留下背景，只换人声</h3>
+      <p>直接盖一条配音上去，环境声、配乐、音效会一起消失，成片听着就像在录音棚里念稿。
+        先在原声轨上执行人声分离，把它拆成两条：一条人声、一条背景声。配音只替换人声，背景声轨留着参与最后的混音。</p>
+      <div class="note"><b>后面还用得上：</b>分离出来的人声轨可以静音，用来对照口型；背景声轨在导出时保留，成片才有现场感。</div>
+      <figure>
+        <div class="media">
+          <video controls playsinline preload="metadata" poster="../../assets/cases/dubbing/step2-vocals.jpg">
+            <source src="../../assets/cases/dubbing/step2-vocals.mp4" type="video/mp4">
+          </video>
+        </div>
+        <figcaption class="caption">在原声轨上执行人声分离，得到人声轨与背景声轨（约 61 秒，无声）。</figcaption>
+      </figure>
+
+      <h3>3 · 校对译文：先能念出来，才谈得上对口型</h3>
+      <p>字幕的译文只要读着顺；配音的译文还得<b>念得完、合得上嘴</b>。同一句话，英文往往比中文长，
+        所以这里的目标不是逐字对应，而是在原句的长度里把意思说清楚：拆成短句、用缩略形式、把书面语改口语。</p>
+      <p>本例的 4 句台词最终是这样改的（中文原句 → 英文配音台词）：</p>
+      <table class="lines">
+        <thead>
+          <tr><th>#</th><th>中文原句</th><th>英文配音台词</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>老公，是什么让你一直对我这么好啊？是因为爱吗？是因为责任吗？</td>
+            <td>Honey~, what makes you treat me so well all the time? ~Is it love?~ Is it duty?</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>是因為窮，我要是有钱，我也不是啥好东西</td>
+            <td>'Cause I'm poor. If I had money, I'd be no good either.</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>我这点定力全靠贫穷给我守着</td>
+            <td>All myself control, poverty keeps it for me</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>我认为我穷就像是一道福，震住了我所有邪念</td>
+            <td>I see my poverty as a blessing. It holds back all my bad thoughts</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="caption">对照文档只是示例：不同的片子、人物关系和语气，台词要按场景重写，不要照抄句式。</p>
+
+      <details class="faq">
+        <summary>查看与 DeepSeek 的翻译过程记录（中文版）</summary>
+        <p><b>配音脚本对照文档</b><br>
+          用途：本文件提供为对口型配音改编的英文配音脚本。通过使用短句和自然节奏，尽可能贴近中文原文，以确保译文符合配音要求，并保持口型一致。</p>
+        <p><b>第 1 句</b><br>
+          中文原文：老公，是什么让你一直对我这么好啊？是因为爱吗？是因为责任吗？<br>
+          英文配音台词：Honey, what makes you treat me so well all the time? Is it love? Is it duty?<br>
+          口型说明：“Honey”对应“老公”；中间较长短语对应“是什么让你一直对我这么好啊”的连续口型；“Is it love?”和“Is it duty?”短促干净，对应两个问句结尾。<br>
+          备选（更贴近原句结构，稍长）：Honey, what makes you always be so good to me? Is it because of love? Is it because of duty?</p>
+        <p><b>第 2 句</b><br>
+          中文原文：是因為窮 我要是有钱 我也不是啥好东西<br>
+          英文配音台词：'Cause I'm poor. If I had money, I'd be no good either.<br>
+          口型说明：“'Cause I'm poor”短促，对应“是因為窮”；“If I had money”对应“我要是有钱”；“I'd be no good either”比“I wouldn't be a good person either”更短、更干净，便于对口型。<br>
+          备选（语速较慢、口型较长）：It's because I'm poor. If I were rich, I'd be no good either.</p>
+        <p><b>第 3 句</b><br>
+          中文原文：我这点定力全靠贫穷给我守着<br>
+          英文配音台词：All my self-control — poverty keeps it for me.<br>
+          口型说明：“All my self-control”对应“我这点定力”；“poverty keeps it for me”节奏连续，结尾“for me”可对上“守着”的收口。<br>
+          备选（口型较长）：Whatever self-control I have, poverty is what keeps it for me.</p>
+        <p><b>第 4 句</b><br>
+          中文原文：我认为我穷就像是一道福 震住了我所有邪念<br>
+          英文配音台词：I see my poverty as a blessing. It holds back all my bad thoughts.<br>
+          口型说明：“I see my poverty as a blessing”对应“我认为我穷就像是一道福”，其中“blessing”落在“一道福”上；“It holds back all my bad thoughts”短促连续，结尾“bad thoughts”收口干净，对应“邪念”。<br>
+          备选（语速较慢、口型较长）：I think my poverty is a blessing — it keeps all my evil thoughts in check.</p>
+        <p><b>配音通用说明</b><br>
+          1. 优先使用短句，避免复杂长句，便于对口型。<br>
+          2. 使用“I'm”“I'd”“'Cause”等缩略形式，使节奏自然、口型紧凑。<br>
+          3. 每句给出两个版本时，通常第一版更适合干净对口型；备选版适合语速较慢或画面口型较长的情况。<br>
+          4. 译文尽量贴近中文原意，但在直译过长、不利于配音时做了调整。</p>
+      </details>
+
+      <figure>
+        <div class="media">
+          <video controls playsinline preload="metadata" poster="../../assets/cases/dubbing/step3-translate.jpg">
+            <source src="../../assets/cases/dubbing/step3-translate.mp4" type="video/mp4">
+          </video>
+        </div>
+        <figcaption class="caption">在片段表里逐句改译文，改完直接拿去配音（约 38 秒，无声）。</figcaption>
+      </figure>
+
+      <h3>4 · 配音并对齐波纹：让配音跟着原声的节奏走</h3>
+      <p>整段配音出来以后，再看它和原声的波形差多少。差得不多，调语速；中间多出来的空白，删除静音；
+        不够长的地方，插入静音。目标不是「一模一样」，而是每一句的起伏、停顿和原声对得上 —— 播放时口型才不飘。</p>
+      <ul class="list">
+        <li><b>音量</b>：决定音色和感情，可能要调几次才满意。</li>
+        <li><b>语速</b>：整句的粗调，第一句用了 0.9×，第二句 0.95×，第三、四句保持 1.0×。</li>
+        <li><b>删除静音</b>：去掉句中多余的空白，让后半句往前赶。</li>
+        <li><b>插入静音</b>：补出原声里本来就有的停顿，让配音别抢拍。</li>
+      </ul>
+      <p class="caption">下面四张是每一句配音完成后的对比：上面是原声，下面是配音，右侧是这一句做过的编辑。</p>
+
+      <figure>
+        <div class="media">
+          <img src="../../assets/cases/dubbing/step4-wave-1.webp" alt="第一句台词：原声与配音的波纹对比" loading="lazy" width="1668" height="884">
+        </div>
+        <figcaption class="caption">第一句（6.4 秒）：0.9× 语速 + 12 处静音编辑，六段话音的起伏和原声对上了。</figcaption>
+      </figure>
+
+      <figure>
+        <div class="media">
+          <img src="../../assets/cases/dubbing/step4-wave-2.webp" alt="第二句台词：原声与配音的波纹对比" loading="lazy" width="1694" height="886">
+        </div>
+        <figcaption class="caption">第二句（4.8 秒）：0.95× 语速 + 17 处编辑，这一句英文比中文长，靠删除静音把节奏拉回来。</figcaption>
+      </figure>
+
+      <figure>
+        <div class="media">
+          <img src="../../assets/cases/dubbing/step4-wave-3.webp" alt="第三句台词：原声与配音的波纹对比" loading="lazy" width="1694" height="900">
+        </div>
+        <figcaption class="caption">第三句（2.8 秒）：语速不动，只裁掉头尾 3 处，波形本来就贴合。</figcaption>
+      </figure>
+
+      <figure>
+        <div class="media">
+          <img src="../../assets/cases/dubbing/step4-wave-4.webp" alt="第四句台词：原声与配音的波纹对比" loading="lazy" width="1680" height="874">
+        </div>
+        <figcaption class="caption">第四句（4.2 秒）：5 处编辑，两处裁切、一处插入静音，收尾的「bad thoughts」落在原声的收口上。</figcaption>
+      </figure>
+
+      <figure>
+        <div class="media">
+          <video controls playsinline preload="metadata" poster="../../assets/cases/dubbing/step4-waveform.jpg">
+            <source src="../../assets/cases/dubbing/step4-waveform.mp4" type="video/mp4">
+          </video>
+        </div>
+        <figcaption class="caption">演示：通过语速、插入静音、删除静音，把配音波纹调到和原声尽量一致（约 92 秒，无声）。</figcaption>
+      </figure>
+
+      <h3>5 · 克隆字幕轨：从配音轨复制一条，再重新分段</h3>
+      <p>配音轨上的 4 段是「台词」级的分段，一段 2–6 秒，直接当字幕会一行太长。在配音轨上右键，选
+        <b>Clone subtitles</b>，得到一条只用于显示的字幕轨，再按语义把它切成更均匀的 7 段。</p>
+      <p>字幕轨只决定画面上的字，不影响已经配好的声音；改字幕分段不需要重新配音。</p>
+      <figure>
+        <div class="media">
+          <video controls playsinline preload="metadata" poster="../../assets/cases/dubbing/step5-subtitles.jpg">
+            <source src="../../assets/cases/dubbing/step5-subtitles.mp4" type="video/mp4">
+          </video>
+        </div>
+        <figcaption class="caption">从配音轨克隆字幕轨，再调整分段（约 132 秒，无声）。</figcaption>
+      </figure>
+
+      <h3>6 · 导出成片：字幕来源选字幕轨</h3>
+      <p>导出窗口里，输出类型选「视频」，字幕来源选<b>字幕轨</b>（不是配音轨）；双语顺序按需要调，
+        需要单独的字幕文件时，同一窗口也能导出 SRT / ASS。</p>
+      <div class="note"><b>容易选错的地方：</b>选配音轨，烧进画面的会是 4 段长台词；选字幕轨，才是刚刚分好的 7 行。</div>
+      <figure>
+        <div class="media">
+          <video controls playsinline preload="metadata" poster="../../assets/cases/dubbing/step6-export.jpg">
+            <source src="../../assets/cases/dubbing/step6-export.mp4" type="video/mp4">
+          </video>
+        </div>
+        <figcaption class="caption">选择字幕轨道并导出成品（约 52 秒，无声）。</figcaption>
+      </figure>
+    </section>
+
+    <section id="align" data-reveal>
+      <h2>配音怎么对齐</h2>
+      <p class="sub">顺序很重要：先把台词改到能念完，再调语速，最后才动静音。</p>
+      <ul class="list">
+        <li><b>先改台词</b>：句子太长、书面语太多，怎么调语速都会赶或者拖。</li>
+        <li><b>语速是粗调</b>：0.9×–1.0× 之间微调，别用它硬塞长句，音色会变。</li>
+        <li><b>删除静音</b>：句中多余的空白，删掉后整句更跟得上原声。</li>
+        <li><b>插入静音</b>：原声里有停顿、配音抢拍，就补一小段静音。</li>
+        <li><b>每句单独听</b>：看着波形对、听着不对，还是要以耳朵为准；最后整段连起来再听一遍。</li>
+        <li><b>别动分段边界</b>：对齐是在配音轨内部完成的，分段的时间点保持不动。</li>
+      </ul>
+      <div class="note"><b>一个够用的标准：</b>同一个画面，原声和配音的波形起落大致重合；播放时不觉得声音比画面快或慢半拍。</div>
+
+      <details class="faq">
+        <summary>查看配音操作说明（项目里的原始笔记）</summary>
+        <p>配音：<br>
+          1、音量保证配音后的音色和感情，这个可能需要调整多次达到比较好的配音效果；<br>
+          2、尽量保证配音后的波纹和原声波纹一致；删除配音后静音数据和插入静音数据是两个不错的操作。</p>
+      </details>
+    </section>
+
+    <section id="reuse" data-reveal>
+      <h2>可复用场景</h2>
+      <p class="sub">只要有「原声」和「画面」，这套流程都能用：换语言，但保留表演和背景。</p>
+      <div class="chips">
+        <span class="chip">短剧 / 影视二创</span>
+        <span class="chip">口播与访谈</span>
+        <span class="chip">课程与讲座</span>
+        <span class="chip">产品演示</span>
+        <span class="chip">跨境电商</span>
+        <span class="chip">广告与宣传片</span>
+        <span class="chip">纪录片片段</span>
+      </div>
+      <div class="note"><b>一条通用规律：</b>分段决定「一句话有多长」，译文决定「这句话能不能念完」，
+        波纹对齐决定「听起来是不是同一个人在说」。三步顺序别倒过来。</div>
+    </section>
+
+    <section id="related" data-reveal>
+      <h2>相关指南</h2>
+      <p class="sub">本案例用到的主要功能，指南里有完整说明。</p>
+      <ul class="related">
+        <li><b><a href="../../#timeline">时间线编辑</a></b><span>片段的裁剪、分割、合并、锁定与解锁</span></li>
+        <li><b><a href="../../#dubbing">配音与音色</a></b><span>音色克隆、人声分离降噪、音频特效</span></li>
+        <li><b><a href="../../#subtitles">字幕</a></b><span>字幕轨道、克隆字幕、双语与烧录</span></li>
+        <li><b><a href="../../#export">导出</a></b><span>视频、纯音频、字幕三种输出</span></li>
+        <li><b><a href="../../#analysis">AI 分析</a></b><span>提取、分段、识别、翻译四步与重新分析</span></li>
+      </ul>
+    </section>
+
+  </main>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 Dublane SX</span>
+    <span class="spacer"></span>
+    <a href="../">全部案例</a>
+    <a href="../../">使用指南</a>
+    <a href="../../../">隐私政策</a>
+    <a href="mailto:xmediaframework@163.com">xmediaframework@163.com</a>
+  </div>
+</footer>
+
+<script src="../../assets/guide.js"></script>
+</body>
+</html>

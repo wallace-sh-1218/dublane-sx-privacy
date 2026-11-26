@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case 03 · Dubbing — Dublane Use Cases</title>
+<meta name="description" content="Dublane case study: a 22-second Chinese short dubbed into English. Tidy the AI segments, separate the vocals, rewrite the script to fit the mouth, clone the voice and align the waveforms, clone a subtitle track, then export — with the source clip, the result and screen recordings.">
+<meta name="robots" content="index, follow">
+<link rel="alternate" hreflang="zh-CN" href="https://wallace-sh-1218.github.io/dublane-sx-privacy/help/cases/dubbing/">
+<link rel="alternate" hreflang="en" href="https://wallace-sh-1218.github.io/dublane-sx-privacy/help/en/cases/dubbing/">
+<link rel="icon" href="../../../assets/brand/icon.png">
+<link rel="stylesheet" href="../../../assets/guide.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="../../../">
+      <img src="../../../assets/brand/wordmark-en.png" alt="Dublane">
+      <span class="tag">Use Case 03</span>
+    </a>
+    <nav>
+      <a class="hide-sm" href="../../../">User Guide</a>
+      <a class="hide-sm" href="../">All cases</a>
+      <a class="hide-sm" href="../../../">Privacy</a>
+      <span class="lang"><a href="../../cases/dubbing/">中文</a><a class="on" href="./">EN</a></span>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Dublane · Use Case 03</div>
+    <h1>Chinese audio,<br>English dub</h1>
+    <p class="lead">A 22-second Chinese short, four lines. Dublane transcribes and translates them, you rewrite
+      the script so it fits the mouth, clone the original voice into English, line the dub up with the source
+      waveform, add a subtitle track and export — the performance on screen is still the original one.</p>
+    <div class="cta">
+      <a class="btn" href="#result">See the result</a>
+      <a class="btn ghost" href="#steps">See the steps</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>22 seconds</b><span>Source clip at 1280 × 720</span></div>
+      <div class="stat"><b>4 lines</b><span>Merged from 10 fragments</span></div>
+      <div class="stat"><b>Chinese → English</b><span>Dub language</span></div>
+    </div>
+    <div class="heroMedia">
+      <div class="glow"></div>
+      <figure class="media">
+        <video controls playsinline preload="none" poster="../../../assets/cases/dubbing/dubbed.jpg">
+          <source src="../../../assets/cases/dubbing/dubbed.mp4" type="video/mp4">
+        </video>
+      </figure>
+      <p class="caption">The finished dub: English voices over the original background, bilingual subtitles burned in (click to play, with sound).</p>
+    </div>
+  </div>
+</div>
+
+<div class="wrap layout">
+  <nav class="toc" aria-label="Contents">
+    <div class="h">Contents</div>
+    <ol>
+      <li><a href="#result">Result</a></li>
+      <li><a href="#steps">How it was made</a></li>
+      <li><a href="#align">Locking the dub to the picture</a></li>
+      <li><a href="#reuse">Where this works</a></li>
+      <li><a href="#related">Related guides</a></li>
+    </ol>
+    <a class="tocCase" href="../">
+      <b>All use cases</b>
+      <span>Back to the case list</span>
+    </a>
+  </nav>
+
+  <main>
+
+    <section id="result" data-reveal>
+      <h2>Result</h2>
+      <p class="sub">The same 22 seconds in two states: the original, and the English dub.</p>
+      <div class="videoGrid">
+        <article class="videoCard">
+          <div class="media">
+            <video controls playsinline preload="none" poster="../../../assets/cases/dubbing/source.jpg">
+              <source src="../../../assets/cases/dubbing/source.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="meta">
+            <div class="flags"><span class="chip accent">Source</span><span class="chip">Chinese audio</span></div>
+            <b>The original clip</b>
+            <span>1280 × 720 / 30 fps / 22 s, Chinese dialogue with Chinese subtitles burned in.</span>
+          </div>
+        </article>
+        <article class="videoCard">
+          <div class="media">
+            <video controls playsinline preload="none" poster="../../../assets/cases/dubbing/dubbed.jpg">
+              <source src="../../../assets/cases/dubbing/dubbed.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="meta">
+            <div class="flags"><span class="chip accent">Chinese → English</span><span class="chip">Bilingual subs</span></div>
+            <b>The English dub</b>
+            <span>The voices are English; ambience and music stay. Bilingual subtitles are burned into the picture.</span>
+          </div>
+        </article>
+      </div>
+      <p class="caption">The clips on this page are compressed for the web at the same resolution (1280 × 720).
+        Both start at frame 4: the first three frames were leftovers from the previous shot and have been trimmed.</p>
+      <div class="note"><b>Dubbing is not muting the original:</b> the source is split into vocals and background
+        first, and only the vocals are replaced — see step 2.</div>
+    </section>
+
+    <section id="steps" data-reveal>
+      <h2>How it was made</h2>
+      <p class="sub">Six steps: tidy the AI segments, separate the vocals, rewrite the script, dub and align the
+        waveforms, build the subtitle track, export.</p>
+      <div class="grid3">
+        <div class="card">
+          <div class="num">1</div>
+          <b>Tidy the segments</b>
+          <p>The analysis splits on speech, so lines come out long or short. Trim and merge them into complete
+            lines — without moving the timing.</p>
+        </div>
+        <div class="card">
+          <div class="num">2</div>
+          <b>Separate the vocals</b>
+          <p>Split the source into a vocal track and a background track; the dub replaces the vocals only.</p>
+        </div>
+        <div class="card">
+          <div class="num">3</div>
+          <b>Rewrite for dubbing</b>
+          <p>Short sentences, contractions, and a line that can be spoken in the same time slot matter more
+            than a literal translation.</p>
+        </div>
+        <div class="card">
+          <div class="num">4</div>
+          <b>Dub and align</b>
+          <p>Speed, delete-silence and insert-silence pull the dub's waveform onto the source's.</p>
+        </div>
+        <div class="card">
+          <div class="num">5</div>
+          <b>Clone the subtitles</b>
+          <p>Copy the dub track into a subtitle track, then re-split it for evenly sized caption lines.</p>
+        </div>
+        <div class="card">
+          <div class="num">6</div>
+          <b>Export</b>
+          <p>Pick the subtitle track in the export window and burn the bilingual captions into the video.</p>
+        </div>
+      </div>
+
+      <h3>1 · Tidy the segments: put the fragments back into whole lines</h3>
+      <p>The AI splits on speech. Fast delivery and short sentences produce fragments; background voices or
+        effects can glue two lines together. So the first step is not dubbing — it is turning the segments into
+        “one segment = one complete line”.</p>
+      <ul class="list">
+        <li><b>Merge fragments</b>: “Husband”, “Is it because of love?”, “Is it because of duty?” each got their
+          own segment; merge them back into one line.</li>
+        <li><b>Trim the leftovers</b>: use trim to cut the silence and breath at the head and tail of a segment.</li>
+        <li><b>The timing is already right</b>: segment boundaries come from the analysis and line up with the
+          picture. Sliding a whole segment breaks lip-sync, so cut and merge inside the original boundaries —
+          never drag.</li>
+        <li><b>Unlock first</b>: segments are locked by default (the lock icon next to the track). Unlock before
+          you trim, split, merge or move anything.</li>
+      </ul>
+
+      <figure>
+        <div class="media">
+          <img src="../../../assets/cases/dubbing/step1-timeline-before.webp" alt="The timeline before: ten fragments of very different lengths" loading="lazy" width="1800" height="252">
+        </div>
+        <figcaption class="caption">Before: ten fragments, from 0.6 s (“Husband”) to 2.7 s.</figcaption>
+      </figure>
+
+      <figure>
+        <div class="media">
+          <img src="../../../assets/cases/dubbing/step1-timeline-after.webp" alt="The timeline after: four complete lines" loading="lazy" width="1800" height="252">
+        </div>
+        <figcaption class="caption">After: four complete lines (10, 11 and 12 are the merged segments; 7 was
+          already fine). This shot was taken after dubbing, which is why the waveforms are visible.</figcaption>
+      </figure>
+
+      <figure>
+        <div class="media">
+          <img src="../../../assets/cases/dubbing/step1-segments-before.webp" alt="The segment list before: ten rows, original and translation both fragmented" loading="lazy" width="1800" height="644">
+        </div>
+        <figcaption class="caption">Segment list, before: ten rows, and the translation is fragmented too
+          (“Husband”, “Is it because of love?”) — nothing you could hand to a voice.</figcaption>
+      </figure>
+
+      <figure>
+        <div class="media">
+          <img src="../../../assets/cases/dubbing/step1-segments-after.webp" alt="The segment list after: four complete lines with dub-ready translations" loading="lazy" width="1800" height="360">
+        </div>
+        <figcaption class="caption">Segment list, after: four complete lines. Each time range is the union of the
+          old fragments; no boundary was moved.</figcaption>
+      </figure>
+
+      <figure>
+        <div class="media">
+          <video controls playsinline preload="metadata" poster="../../../assets/cases/dubbing/step1-split-merge.jpg">
+            <source src="../../../assets/cases/dubbing/step1-split-merge.mp4" type="video/mp4">
+          </video>
+        </div>
+        <figcaption class="caption">Unlock → trim the empty edges → merge the fragments (about 53 s, no sound).</figcaption>
+      </figure>
+
+      <h3>2 · Separate the vocals: keep the background, replace the voice</h3>
+      <p>Dropping a dub on top of the original would take the ambience, music and effects with it — the result
+        sounds like someone reading in a studio. Run vocal separation on the source track first: it becomes two
+        tracks, vocals and background. The dub replaces the vocals; the background track stays for the final mix.</p>
+      <div class="note"><b>Useful afterwards too:</b> mute the vocal track and use it as a mouth reference;
+        the background track is what keeps the finished scene sounding like a real place.</div>
+      <figure>
+        <div class="media">
+          <video controls playsinline preload="metadata" poster="../../../assets/cases/dubbing/step2-vocals.jpg">
+            <source src="../../../assets/cases/dubbing/step2-vocals.mp4" type="video/mp4">
+          </video>
+        </div>
+        <figcaption class="caption">Vocal separation on the source track gives a vocal track and a background track (about 61 s, no sound).</figcaption>
+      </figure>
+
+      <h3>3 · Rewrite the translation: it has to be speakable before it can fit the mouth</h3>
+      <p>A subtitle translation only has to read well; a dubbing script has to <b>finish in time and land on the
+        mouth</b>. English usually runs longer than Chinese, so the goal is not word-for-word correspondence but
+        saying the same thing inside the original time slot: shorter sentences, contractions, spoken register.</p>
+      <p>These are the four final lines (Chinese original → English dub script):</p>
+      <table class="lines">
+        <thead>
+          <tr><th>#</th><th>Chinese original</th><th>English dub script</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>老公，是什么让你一直对我这么好啊？是因为爱吗？是因为责任吗？</td>
+            <td>Honey~, what makes you treat me so well all the time? ~Is it love?~ Is it duty?</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>是因為窮，我要是有钱，我也不是啥好东西</td>
+            <td>'Cause I'm poor. If I had money, I'd be no good either.</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>我这点定力全靠贫穷给我守着</td>
+            <td>All myself control, poverty keeps it for me</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>我认为我穷就像是一道福，震住了我所有邪念</td>
+            <td>I see my poverty as a blessing. It holds back all my bad thoughts</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="caption">The reference documents are examples: scenes, relationships and tone differ, so rewrite
+        the lines for the film in front of you instead of copying the phrasing.</p>
+
+      <details class="faq">
+        <summary>Show the translation notes exchanged with DeepSeek (English)</summary>
+        <p><b>Dubbing Script Comparison Document</b><br>
+          Purpose: This document provides English dubbing scripts adapted for lip-sync. Short sentences and
+          natural rhythm are used to match the Chinese original as closely as possible, ensuring the translation
+          meets dubbing requirements and lip movements stay consistent.</p>
+        <p><b>Line 1</b><br>
+          Chinese original: 老公，是什么让你一直对我这么好啊？是因为爱吗？是因为责任吗？<br>
+          English dubbing script: Honey, what makes you treat me so well all the time? Is it love? Is it duty?<br>
+          Lip-sync note: “Honey” matches “老公”; the longer middle phrase matches the continuous mouth movement
+          of “是什么让你一直对我这么好啊”; “Is it love?” and “Is it duty?” are short and clean for the two
+          question endings.<br>
+          Alternative (closer to original structure, slightly longer): Honey, what makes you always be so good
+          to me? Is it because of love? Is it because of duty?</p>
+        <p><b>Line 2</b><br>
+          Chinese original: 是因為窮 我要是有钱 我也不是啥好东西<br>
+          English dubbing script: 'Cause I'm poor. If I had money, I'd be no good either.<br>
+          Lip-sync note: “'Cause I'm poor” is short and matches “是因為窮”; “If I had money” matches “我要是有钱”;
+          “I'd be no good either” is shorter and cleaner than “I wouldn't be a good person either,” making it
+          easier for lip-sync.<br>
+          Alternative (slower pace, longer mouth movement): It's because I'm poor. If I were rich, I'd be no good
+          either.</p>
+        <p><b>Line 3</b><br>
+          Chinese original: 我这点定力全靠贫穷给我守着<br>
+          English dubbing script: All my self-control — poverty keeps it for me.<br>
+          Lip-sync note: “All my self-control” matches “我这点定力”; “poverty keeps it for me” runs continuously
+          and ends with “for me,” which fits the closing mouth shape of “守着.”<br>
+          Alternative (longer mouth movement): Whatever self-control I have, poverty is what keeps it for me.</p>
+        <p><b>Line 4</b><br>
+          Chinese original: 我认为我穷就像是一道福 震住了我所有邪念<br>
+          English dubbing script: I see my poverty as a blessing. It holds back all my bad thoughts.<br>
+          Lip-sync note: “I see my poverty as a blessing” matches “我认为我穷就像是一道福,” with “blessing” landing
+          on “一道福”; “It holds back all my bad thoughts” is short and continuous, ending cleanly on “bad
+          thoughts” for “邪念.”<br>
+          Alternative (slower pace, longer mouth movement): I think my poverty is a blessing — it keeps all my
+          evil thoughts in check.</p>
+        <p><b>General Dubbing Notes</b><br>
+          1. Short sentences are preferred over long complex structures to make lip-sync easier.<br>
+          2. Contractions such as “I'm,” “I'd,” and “'Cause” are used to keep the rhythm natural and the mouth
+          movement compact.<br>
+          3. Where two versions are given, the first is usually better for clean lip-sync; the alternative is
+          for slower pacing or longer on-screen mouth movement.<br>
+          4. Meaning is kept close to the Chinese original, but wording is adjusted where a literal translation
+          would be too long for dubbing.</p>
+      </details>
+
+      <figure>
+        <div class="media">
+          <video controls playsinline preload="metadata" poster="../../../assets/cases/dubbing/step3-translate.jpg">
+            <source src="../../../assets/cases/dubbing/step3-translate.mp4" type="video/mp4">
+          </video>
+        </div>
+        <figcaption class="caption">Rewriting the lines in the segment list; the dub uses them as-is (about 38 s, no sound).</figcaption>
+      </figure>
+
+      <h3>4 · Dub and align: let the dub follow the original rhythm</h3>
+      <p>After the first full dub, compare its waveform with the source. Close enough? Nudge the speed. Extra
+        silence? Delete it. Too short? Insert silence. The goal is not a pixel-perfect copy of the waveform — it
+        is that each line rises, pauses and ends where the original does, so the mouth never drifts.</p>
+      <ul class="list">
+        <li><b>Level</b>: sets tone and emotion; it may take a few passes.</li>
+        <li><b>Speed</b>: the coarse adjustment. Line 1 used 0.9×, line 2 0.95×, lines 3 and 4 stayed at 1.0×.</li>
+        <li><b>Delete silence</b>: remove gaps inside the line so the second half catches up.</li>
+        <li><b>Insert silence</b>: restore pauses the original has, so the dub does not run ahead.</li>
+      </ul>
+      <p class="caption">The four shots below compare source and dub for each line; the panel on the right lists
+        the edits made to that line.</p>
+
+      <figure>
+        <div class="media">
+          <img src="../../../assets/cases/dubbing/step4-wave-1.webp" alt="Line 1: source and dub waveforms" loading="lazy" width="1668" height="884">
+        </div>
+        <figcaption class="caption">Line 1 (6.4 s): 0.9× speed plus 12 silence edits; all six phrases now rise
+          where the source does.</figcaption>
+      </figure>
+
+      <figure>
+        <div class="media">
+          <img src="../../../assets/cases/dubbing/step4-wave-2.webp" alt="Line 2: source and dub waveforms" loading="lazy" width="1694" height="886">
+        </div>
+        <figcaption class="caption">Line 2 (4.8 s): 0.95× speed and 17 edits — the English runs longer than the
+          Chinese, so deleting silence pulls the rhythm back.</figcaption>
+      </figure>
+
+      <figure>
+        <div class="media">
+          <img src="../../../assets/cases/dubbing/step4-wave-3.webp" alt="Line 3: source and dub waveforms" loading="lazy" width="1694" height="900">
+        </div>
+        <figcaption class="caption">Line 3 (2.8 s): speed untouched, three trims at the head and tail — it
+          already matched.</figcaption>
+      </figure>
+
+      <figure>
+        <div class="media">
+          <img src="../../../assets/cases/dubbing/step4-wave-4.webp" alt="Line 4: source and dub waveforms" loading="lazy" width="1680" height="874">
+        </div>
+        <figcaption class="caption">Line 4 (4.2 s): five edits — two trims and one inserted silence — so the
+          closing “bad thoughts” lands on the source's ending.</figcaption>
+      </figure>
+
+      <figure>
+        <div class="media">
+          <video controls playsinline preload="metadata" poster="../../../assets/cases/dubbing/step4-waveform.jpg">
+            <source src="../../../assets/cases/dubbing/step4-waveform.mp4" type="video/mp4">
+          </video>
+        </div>
+        <figcaption class="caption">Demo: speed, insert silence and delete silence bring the dub waveform onto the source's (about 92 s, no sound).</figcaption>
+      </figure>
+
+      <h3>5 · Clone a subtitle track: copy the dub track, then re-split it</h3>
+      <p>The dub track's four segments are line-level — two to six seconds each — which is far too long for a
+        single caption. Right-click the dub track and choose <b>Clone subtitles</b>: you get a display-only
+        subtitle track, then split it by meaning into seven even lines.</p>
+      <p>The subtitle track only decides what appears on screen; it never touches the recorded dub, so
+        re-splitting does not mean re-dubbing.</p>
+      <figure>
+        <div class="media">
+          <video controls playsinline preload="metadata" poster="../../../assets/cases/dubbing/step5-subtitles.jpg">
+            <source src="../../../assets/cases/dubbing/step5-subtitles.mp4" type="video/mp4">
+          </video>
+        </div>
+        <figcaption class="caption">Cloning a subtitle track from the dub and adjusting the segmentation (about 132 s, no sound).</figcaption>
+      </figure>
+
+      <h3>6 · Export: the caption source is the subtitle track</h3>
+      <p>In the export window choose “Video” as the output and <b>the subtitle track</b> (not the dub track) as
+        the caption source. Set the bilingual order if needed; SRT / ASS can be exported from the same window.</p>
+      <div class="note"><b>The easy mistake:</b> pick the dub track and the four long lines get burned in; pick
+        the subtitle track and you get the seven short ones you just built.</div>
+      <figure>
+        <div class="media">
+          <video controls playsinline preload="metadata" poster="../../../assets/cases/dubbing/step6-export.jpg">
+            <source src="../../../assets/cases/dubbing/step6-export.mp4" type="video/mp4">
+          </video>
+        </div>
+        <figcaption class="caption">Choosing the subtitle track and exporting (about 52 s, no sound).</figcaption>
+      </figure>
+    </section>
+
+    <section id="align" data-reveal>
+      <h2>Locking the dub to the picture</h2>
+      <p class="sub">Order matters: make the line speakable, adjust speed, and only then touch silence.</p>
+      <ul class="list">
+        <li><b>Rewrite first</b>: if the sentence is too long or too written, no speed setting will fix it.</li>
+        <li><b>Speed is coarse</b>: nudge between 0.9× and 1.0×; do not use it to cram a long line, the voice
+          changes.</li>
+        <li><b>Delete silence</b>: removing gaps inside the line is what lets the dub keep up.</li>
+        <li><b>Insert silence</b>: add a short pause where the source has one, so the dub does not jump ahead.</li>
+        <li><b>Listen per line</b>: the waveform is a guide; the ear decides. Then listen to the whole take again.</li>
+        <li><b>Never move the segments</b>: alignment happens inside the dub track; the segment timing stays put.</li>
+      </ul>
+      <div class="note"><b>Good enough:</b> on the same shot, the rises and falls of source and dub roughly
+        coincide, and playback does not feel a beat ahead or behind.</div>
+
+      <details class="faq">
+        <summary>Show the dubbing notes (original project notes)</summary>
+        <p>Dubbing:<br>
+          1. Level is what keeps the tone and emotion of the dub; it may take several passes to get right.<br>
+          2. Keep the dubbed waveform as close to the source as possible; deleting silence and inserting silence
+          are the two moves that get you there.</p>
+      </details>
+    </section>
+
+    <section id="reuse" data-reveal>
+      <h2>Where this works</h2>
+      <p class="sub">Anywhere you have the original voices and the picture: change the language, keep the
+        performance and the room.</p>
+      <div class="chips">
+        <span class="chip">Short dramas / edits</span>
+        <span class="chip">Talking heads &amp; interviews</span>
+        <span class="chip">Courses &amp; lectures</span>
+        <span class="chip">Product demos</span>
+        <span class="chip">Cross-border shops</span>
+        <span class="chip">Ads &amp; promos</span>
+        <span class="chip">Documentary clips</span>
+      </div>
+      <div class="note"><b>One rule:</b> segments decide how long a line is, the script decides whether it can be
+        spoken in that time, and waveform alignment decides whether it sounds like the same person. Keep that
+        order.</div>
+    </section>
+
+    <section id="related" data-reveal>
+      <h2>Related guides</h2>
+      <p class="sub">The features used here are documented in the guide.</p>
+      <ul class="related">
+        <li><b><a href="../../../#timeline">Timeline editing</a></b><span>Trim, split, merge, lock and unlock segments</span></li>
+        <li><b><a href="../../../#dubbing">Dubbing &amp; voices</a></b><span>Voice cloning, vocal separation, audio effects</span></li>
+        <li><b><a href="../../../#subtitles">Subtitles</a></b><span>Subtitle tracks, cloning, bilingual output, burn-in</span></li>
+        <li><b><a href="../../../#export">Export</a></b><span>Video, audio-only and subtitle outputs</span></li>
+        <li><b><a href="../../../#analysis">AI analysis</a></b><span>Extract, segment, transcribe, translate — and re-run</span></li>
+      </ul>
+    </section>
+
+  </main>
+</div>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 Dublane SX</span>
+    <span class="spacer"></span>
+    <a href="../">All cases</a>
+    <a href="../../../">User Guide</a>
+    <a href="../../../">Privacy</a>
+    <a href="mailto:xmediaframework@163.com">xmediaframework@163.com</a>
+  </div>
+</footer>
+
+<script src="../../../assets/guide.js"></script>
+</body>
+</html>

@@ -212,6 +212,16 @@ table.keys td { padding: 10px 12px; border-bottom: 1px solid var(--line); vertic
 table.keys td:first-child { width: 210px; white-space: nowrap; }
 table.keys tr:last-child td { border-bottom: 0; }
 
+/* Case 03: dialogue table (line # / original / dub script). */
+table.lines { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 14.5px; }
+table.lines th, table.lines td {
+  padding: 10px 12px; border-bottom: 1px solid var(--line);
+  vertical-align: top; text-align: left;
+}
+table.lines th { color: var(--muted); font-weight: 600; font-size: 12.5px; }
+table.lines td:first-child { width: 34px; color: var(--muted); white-space: nowrap; }
+table.lines tr:last-child td { border-bottom: 0; }
+
 details.faq {
   border: 1px solid var(--line); border-radius: 14px; background: var(--surface);
   padding: 2px 18px; margin: 10px 0;
