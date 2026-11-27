@@ -16,7 +16,10 @@
 <header class="site">
   <div class="wrap">
     <a class="brand" href="../../">
-      <img src="../../assets/brand/wordmark-zh.png" alt="Dublane · 声巷">
+      <picture>
+        <source srcset="../../assets/brand/wordmark-zh-light.png" media="(prefers-color-scheme: light)">
+        <img src="../../assets/brand/wordmark-zh.png" alt="Dublane · 声巷">
+      </picture>
       <span class="tag">使用案例 02</span>
     </a>
     <nav>
@@ -134,12 +137,12 @@
         <div class="card">
           <div class="num">5</div>
           <b>在导出窗口设置字幕</b>
-          <p>打开「导出 → 字幕」，选字幕轨道、双语顺序「译文在上」，再调位置、边距和字号。预览帧按输出分辨率渲染，所见即所得。</p>
+          <p>点工具条的「导出」，在窗口的「字幕」区选字幕轨道、双语顺序「译文在上」，再调位置、边距和字号。预览帧按输出分辨率渲染，所见即所得。</p>
         </div>
         <div class="card">
           <div class="num">6</div>
           <b>导出成品</b>
-          <p>输出类型选「视频」，字幕选「烧录进画面」。需要单独的字幕文件时，同一窗口也能导出 SRT / ASS。</p>
+          <p>输出类型选「视频」，输出方式选「烧录进视频」。需要单独的字幕文件时，同一窗口也能导出 SRT / ASS。</p>
         </div>
       </div>
 
@@ -177,7 +180,7 @@
         <li><b>位置与边距</b>：底部居中，左右边距 5%，垂直边距 4.5%，长句也不会顶到画面边缘</li>
         <li><b>字号</b>：主语言与第二语言分别设字号；本例第二语言 100%，两种文字视觉重量一致</li>
         <li><b>字体</b>：可选内置字体，也可以在导出窗口点「添加字体」导入自己的 TTF / OTF / TTC</li>
-        <li><b>输出方式</b>：烧录进画面、导出单独的 SRT / ASS，或两者都要</li>
+        <li><b>输出方式</b>：烧录进视频、导出单独的 SRT / ASS，或两者都要</li>
         <li><b>改一句只重导</b>：调一条译文不会影响其他片段，也不需要重新识别或重新配音</li>
       </ul>
       <div class="note"><b>设置会跟着工程走：</b>字幕轨道、双语顺序、字体和边距都保存在项目里，下次打开还是同一套，不用担心重新调一遍。</div>
@@ -203,7 +206,7 @@
       <p class="sub">本案例用到的主要功能，指南里有完整说明。</p>
       <ul class="related">
         <li><b><a href="../../#subtitles">字幕</a></b><span>字幕内容来源、样式、字体与输出方式</span></li>
-        <li><b><a href="../../#export">导出</a></b><span>视频 / 纯音频 / 字幕三种输出，分辨率与码率</span></li>
+        <li><b><a href="../../#export">导出</a></b><span>视频 / 仅音频 / 仅字幕三种输出，分辨率与码率</span></li>
         <li><b><a href="../../#analysis">AI 分析</a></b><span>提取、分段、识别、翻译四步与重新分析</span></li>
         <li><b><a href="../../#timeline">时间线编辑</a></b><span>片段块的移动、裁剪、分割、合并与锁定</span></li>
       </ul>

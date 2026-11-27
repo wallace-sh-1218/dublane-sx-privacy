@@ -16,7 +16,10 @@
 <header class="site">
   <div class="wrap">
     <a class="brand" href="./">
-      <img src="../assets/brand/wordmark-en.png" alt="Dublane">
+      <picture>
+        <source srcset="../assets/brand/wordmark-en-light.png" media="(prefers-color-scheme: light)">
+        <img src="../assets/brand/wordmark-en.png" alt="Dublane">
+      </picture>
       <span class="tag">User Guide</span>
     </a>
     <nav>
@@ -82,7 +85,7 @@
     </ol>
     <a class="tocCase" href="cases/">
       <b>Use cases</b>
-      <span>Narration, subtitles · results and screenshots</span>
+      <span>Narration, subtitles, dubbing · results and screenshots</span>
     </a>
   </nav>
 
@@ -105,7 +108,7 @@
         <div class="card">
           <div class="num">3</div>
           <b>Preview and export</b>
-          <p>Check timing and dubbing on the timeline, then hit Export in the top-right: video, audio-only or subtitles.</p>
+          <p>Check timing and dubbing on the timeline, then hit Export in the top-right: video, audio only or subtitles only.</p>
         </div>
       </div>
       <figure>
@@ -199,14 +202,14 @@
       <p class="sub">Subtitles come from the segment table: source text, translation, or both.</p>
       <ul class="list">
         <li><b>Style</b>: size, colour, outline, background, position (bottom / centre / top)</li>
-        <li><b>Output</b>: burn into the picture, export a sidecar SRT / ASS, or both</li>
+        <li><b>Output</b>: burn into the video, export a sidecar SRT / ASS, or both</li>
         <li><b>Fonts</b>: pick a common CJK family in the export window, or choose “Add font” to import your own TTF / OTF / TTC; imported fonts can be deleted anytime</li>
       </ul>
     </section>
 
     <section id="export" data-reveal>
       <h2>Export</h2>
-      <p class="sub">Three output types: the full video, audio only, or subtitle files only.</p>
+      <p class="sub">Three output types: video, audio only or subtitles only.</p>
       <figure>
         <div class="media">
           <video data-autoplay autoplay muted loop playsinline poster="../assets/video/export-en.jpg">

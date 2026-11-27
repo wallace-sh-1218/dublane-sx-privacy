@@ -16,7 +16,10 @@
 <header class="site">
   <div class="wrap">
     <a class="brand" href="../../">
-      <img src="../../assets/brand/wordmark-zh.png" alt="Dublane · 声巷">
+      <picture>
+        <source srcset="../../assets/brand/wordmark-zh-light.png" media="(prefers-color-scheme: light)">
+        <img src="../../assets/brand/wordmark-zh.png" alt="Dublane · 声巷">
+      </picture>
       <span class="tag">使用案例 01</span>
     </a>
     <nav>
@@ -155,7 +158,7 @@
         <div class="card">
           <div class="num">1</div>
           <b>导入无声视频</b>
-          <p>点左上角「添加视频」，选中这段 4K 樱花空镜。Dublane 原地读取文件，生成缩略图、波形和时长信息。</p>
+          <p>点左侧视频库下方的「添加视频」，选中这段 4K 樱花空镜。Dublane 原地读取文件，生成缩略图、波形和时长信息。</p>
         </div>
         <div class="card">
           <div class="num">2</div>
@@ -180,7 +183,7 @@
         <div class="card">
           <div class="num">6</div>
           <b>导出 4 个成品</b>
-          <p>导出对话框里选「视频」；字幕可选烧录进画面或另存 SRT。先导出中文版，再把旁白轨换成英文文案，导出英文版 —— 一次工程，四个成品。</p>
+          <p>导出对话框里选「视频」；字幕可选烧录进视频或另存 SRT。先导出中文版（只开中文旁白轨的监听），再关掉中文轨、打开英文旁白轨，导出英文版 —— 一次工程，四个成品。</p>
         </div>
       </div>
       <figure>
@@ -206,7 +209,7 @@
         <li><b>English…（英文旁白轨）</b>：同一段解说的英文版，导出英文成品时打开监听、导出中文成品时静音</li>
         <li><b>bgm（BGM 轨）</b>：整段铺底的背景音乐，音量比人声低，导出时一直参与混音</li>
         <li><b>片段 ID 圆点</b>：打开工具条的「#」开关，每个片段都会标出编号，方便和片段表一一对应</li>
-        <li><b>吸附</b>：工具条可以选「Zero-cross」吸附，片段首尾会贴到波形过零点，拼接时听感更自然</li>
+        <li><b>零交叉</b>：打开工具条的「零交叉」后，修剪时的切割边缘会贴到音频过零点，拼接处不会爆音</li>
       </ul>
       <div class="note"><b>为什么要分轨：</b>旁白和 BGM 分开之后，改一句文案只重新生成那一个片段；调整背景音乐音量也不会影响已经做好的配音。</div>
     </section>
@@ -216,7 +219,7 @@
       <p class="sub">字幕不需要另外写 —— 内容直接来自片段表。</p>
       <ul class="list">
         <li><b>内容来源</b>：原文、译文，或两者同时显示；本案例用的是旁白轨上的文案</li>
-        <li><b>两种输出</b>：烧录进画面（固定在成片里），或导出独立的 SRT / ASS 文件，也可以两者都要</li>
+        <li><b>两种输出</b>：烧录进视频（固定在成片里），或导出独立的 SRT / ASS 文件，也可以两者都要</li>
         <li><b>样式</b>：字号、颜色、描边、背景、位置（底部 / 居中 / 顶部）都在导出窗口里调</li>
         <li><b>字体</b>：可选内置中文字体，也可以在导出窗口点「添加字体」导入自己的 TTF / OTF / TTC</li>
         <li><b>所见即所得</b>：导出窗口里的预览帧按最终输出分辨率渲染，缩放方式和黑边都与成片一致</li>
@@ -245,7 +248,7 @@
         <li><b><a href="../../#timeline">时间线编辑</a></b><span>片段块的移动、裁剪、分割、合并、锁定与撤销</span></li>
         <li><b><a href="../../#dubbing">配音与音色</a></b><span>音色选择、克隆音色、语速与段级增益</span></li>
         <li><b><a href="../../#subtitles">字幕</a></b><span>字幕内容来源、样式与输出方式</span></li>
-        <li><b><a href="../../#export">导出</a></b><span>视频 / 纯音频 / 字幕三种输出，分辨率、码率与 HDR</span></li>
+        <li><b><a href="../../#export">导出</a></b><span>视频 / 仅音频 / 仅字幕三种输出，分辨率、码率与 HDR</span></li>
         <li><b><a href="../../#tracks">轨道与视图</a></b><span>监听 / 静音、轨道高度、横向缩放与片段编号</span></li>
       </ul>
     </section>

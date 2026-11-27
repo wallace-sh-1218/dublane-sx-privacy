@@ -16,7 +16,10 @@
 <header class="site">
   <div class="wrap">
     <a class="brand" href="../../../">
-      <img src="../../../assets/brand/wordmark-en.png" alt="Dublane">
+      <picture>
+        <source srcset="../../../assets/brand/wordmark-en-light.png" media="(prefers-color-scheme: light)">
+        <img src="../../../assets/brand/wordmark-en.png" alt="Dublane">
+      </picture>
       <span class="tag">Use Case 03</span>
     </a>
     <nav>
@@ -363,7 +366,7 @@
 
       <h3>5 · Clone a subtitle track: copy the dub track, then re-split it</h3>
       <p>The dub track's four segments are line-level — two to six seconds each — which is far too long for a
-        single caption. Right-click the dub track and choose <b>Clone subtitles</b>: you get a display-only
+        single caption. Open the dub track's ⋯ menu and choose <b>Clone subtitles</b>: you get a display-only
         subtitle track, then split it by meaning into seven even lines.</p>
       <p>The subtitle track only decides what appears on screen; it never touches the recorded dub, so
         re-splitting does not mean re-dubbing.</p>
@@ -377,8 +380,8 @@
       </figure>
 
       <h3>6 · Export: the caption source is the subtitle track</h3>
-      <p>In the export window choose “Video” as the output and <b>the subtitle track</b> (not the dub track) as
-        the caption source. Set the bilingual order if needed; SRT / ASS can be exported from the same window.</p>
+      <p>In the export window choose “Video” as the output, then pick the subtitle track you just built under
+        <b>Subtitle track</b> (not the dub track). Set the bilingual order if needed; SRT / ASS can be exported from the same window.</p>
       <div class="note"><b>The easy mistake:</b> pick the dub track and the four long lines get burned in; pick
         the subtitle track and you get the seven short ones you just built.</div>
       <figure>
@@ -440,7 +443,7 @@
         <li><b><a href="../../../#timeline">Timeline editing</a></b><span>Trim, split, merge, lock and unlock segments</span></li>
         <li><b><a href="../../../#dubbing">Dubbing &amp; voices</a></b><span>Voice cloning, vocal separation, audio effects</span></li>
         <li><b><a href="../../../#subtitles">Subtitles</a></b><span>Subtitle tracks, cloning, bilingual output, burn-in</span></li>
-        <li><b><a href="../../../#export">Export</a></b><span>Video, audio-only and subtitle outputs</span></li>
+        <li><b><a href="../../../#export">Export</a></b><span>Video, audio only and subtitles only outputs</span></li>
         <li><b><a href="../../../#analysis">AI analysis</a></b><span>Extract, segment, transcribe, translate — and re-run</span></li>
       </ul>
     </section>

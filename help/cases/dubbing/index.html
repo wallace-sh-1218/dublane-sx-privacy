@@ -16,7 +16,10 @@
 <header class="site">
   <div class="wrap">
     <a class="brand" href="../../">
-      <img src="../../assets/brand/wordmark-zh.png" alt="Dublane · 声巷">
+      <picture>
+        <source srcset="../../assets/brand/wordmark-zh-light.png" media="(prefers-color-scheme: light)">
+        <img src="../../assets/brand/wordmark-zh.png" alt="Dublane · 声巷">
+      </picture>
       <span class="tag">使用案例 03</span>
     </a>
     <nav>
@@ -138,7 +141,7 @@
         <div class="card">
           <div class="num">6</div>
           <b>导出成片</b>
-          <p>导出窗口里选「字幕轨」，把双语字幕烧进画面，输出视频。</p>
+          <p>导出窗口里选「字幕轨道」，把双语字幕烧录进视频。</p>
         </div>
       </div>
 
@@ -326,8 +329,8 @@
       </figure>
 
       <h3>5 · 克隆字幕轨：从配音轨复制一条，再重新分段</h3>
-      <p>配音轨上的 4 段是「台词」级的分段，一段 2–6 秒，直接当字幕会一行太长。在配音轨上右键，选
-        <b>Clone subtitles</b>，得到一条只用于显示的字幕轨，再按语义把它切成更均匀的 7 段。</p>
+      <p>配音轨上的 4 段是「台词」级的分段，一段 2–6 秒，直接当字幕会一行太长。点配音轨道头的「⋯」（更多操作），选
+        <b>「克隆字幕」</b>，得到一条只用于显示的字幕轨，再按语义把它切成更均匀的 7 段。</p>
       <p>字幕轨只决定画面上的字，不影响已经配好的声音；改字幕分段不需要重新配音。</p>
       <figure>
         <div class="media">
@@ -338,10 +341,10 @@
         <figcaption class="caption">从配音轨克隆字幕轨，再调整分段（约 132 秒，无声）。</figcaption>
       </figure>
 
-      <h3>6 · 导出成片：字幕来源选字幕轨</h3>
-      <p>导出窗口里，输出类型选「视频」，字幕来源选<b>字幕轨</b>（不是配音轨）；双语顺序按需要调，
+      <h3>6 · 导出成片：字幕来源选字幕轨道</h3>
+      <p>导出窗口里，输出类型选「视频」，在「字幕来源轨道」里选<b>刚做好的字幕轨道</b>（不是配音轨道）；双语顺序按需要调，
         需要单独的字幕文件时，同一窗口也能导出 SRT / ASS。</p>
-      <div class="note"><b>容易选错的地方：</b>选配音轨，烧进画面的会是 4 段长台词；选字幕轨，才是刚刚分好的 7 行。</div>
+      <div class="note"><b>容易选错的地方：</b>选配音轨道，烧进视频的会是 4 段长台词；选字幕轨道，才是刚刚分好的 7 行。</div>
       <figure>
         <div class="media">
           <video controls playsinline preload="metadata" poster="../../assets/cases/dubbing/step6-export.jpg">
@@ -396,7 +399,7 @@
         <li><b><a href="../../#timeline">时间线编辑</a></b><span>片段的裁剪、分割、合并、锁定与解锁</span></li>
         <li><b><a href="../../#dubbing">配音与音色</a></b><span>音色克隆、人声分离降噪、音频特效</span></li>
         <li><b><a href="../../#subtitles">字幕</a></b><span>字幕轨道、克隆字幕、双语与烧录</span></li>
-        <li><b><a href="../../#export">导出</a></b><span>视频、纯音频、字幕三种输出</span></li>
+        <li><b><a href="../../#export">导出</a></b><span>视频、仅音频、仅字幕三种输出</span></li>
         <li><b><a href="../../#analysis">AI 分析</a></b><span>提取、分段、识别、翻译四步与重新分析</span></li>
       </ul>
     </section>

@@ -16,7 +16,10 @@
 <header class="site">
   <div class="wrap">
     <a class="brand" href="../../../">
-      <img src="../../../assets/brand/wordmark-en.png" alt="Dublane">
+      <picture>
+        <source srcset="../../../assets/brand/wordmark-en-light.png" media="(prefers-color-scheme: light)">
+        <img src="../../../assets/brand/wordmark-en.png" alt="Dublane">
+      </picture>
       <span class="tag">Use Case 01</span>
     </a>
     <nav>
@@ -157,7 +160,7 @@
         <div class="card">
           <div class="num">1</div>
           <b>Import the silent video</b>
-          <p>Click “Add Video” and pick the 4K cherry-blossom footage. Dublane reads it in place and generates thumbnails, waveforms and the duration.</p>
+          <p>Click “Add Video” below the video library on the left and pick the 4K cherry-blossom footage. Dublane reads it in place and generates thumbnails, waveforms and the duration.</p>
         </div>
         <div class="card">
           <div class="num">2</div>
@@ -182,7 +185,7 @@
         <div class="card">
           <div class="num">6</div>
           <b>Export four videos</b>
-          <p>Pick “Video” in the export dialog; subtitles can be burned in or saved as SRT. Export the Chinese cut, swap the narration track for the English script, export again — one project, four deliverables.</p>
+          <p>Pick “Video” in the export dialog; subtitles can be burned into the video or saved as SRT. Export the Chinese cut with only the Chinese narration track monitored, then mute it, monitor the English track and export again — one project, four deliverables.</p>
         </div>
       </div>
       <figure>
@@ -208,7 +211,7 @@
         <li><b>English… (second narration track)</b>: the same script in English — monitored for the English export, muted for the Chinese one</li>
         <li><b>bgm (music track)</b>: the bed that runs under the whole clip, kept below the voice and monitored all the time</li>
         <li><b>Segment-ID dots</b>: switch the “#” button in the toolbar and every clip is tagged with its number, so it maps one-to-one onto the segment table</li>
-        <li><b>Snapping</b>: “Zero-cross” in the toolbar snaps clip edges to waveform zero crossings, which sounds cleaner when segments butt together</li>
+        <li><b>Zero-cross</b>: with “Zero-cross” on in the toolbar, trim edges snap to audio zero crossings, so butted segments do not click</li>
       </ul>
       <div class="note"><b>Why separate tracks:</b> with narration and BGM apart, changing one line only regenerates that one clip, and re-levelling the music never touches the dub you already made.</div>
     </section>
@@ -247,7 +250,7 @@
         <li><b><a href="../../../#timeline">Timeline editing</a></b><span>Moving, trimming, splitting, merging, locking and undoing clips</span></li>
         <li><b><a href="../../../#dubbing">Voices and dubbing</a></b><span>Voice choice, cloned voices, speed and per-segment gain</span></li>
         <li><b><a href="../../../#subtitles">Subtitles</a></b><span>Where the text comes from, how it is styled and how it is output</span></li>
-        <li><b><a href="../../../#export">Export</a></b><span>Video / audio-only / subtitle output, resolution, bitrate and HDR</span></li>
+        <li><b><a href="../../../#export">Export</a></b><span>Video / audio only / subtitles only output, resolution, bitrate and HDR</span></li>
         <li><b><a href="../../../#tracks">Tracks and view</a></b><span>Monitor and mute, lane height, horizontal zoom and segment numbers</span></li>
       </ul>
     </section>

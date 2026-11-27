@@ -16,7 +16,10 @@
 <header class="site">
   <div class="wrap">
     <a class="brand" href="../../../">
-      <img src="../../../assets/brand/wordmark-en.png" alt="Dublane">
+      <picture>
+        <source srcset="../../../assets/brand/wordmark-en-light.png" media="(prefers-color-scheme: light)">
+        <img src="../../../assets/brand/wordmark-en.png" alt="Dublane">
+      </picture>
       <span class="tag">Use Case 02</span>
     </a>
     <nav>
@@ -134,7 +137,7 @@
         <div class="card">
           <div class="num">5</div>
           <b>Set subtitles in the export window</b>
-          <p>Open Export → Subtitles, choose the track, put the translation on top, then adjust position, margins and size. The preview renders at the output resolution.</p>
+          <p>Hit Export in the toolbar, then in the Subtitles section choose the track and set the bilingual order to “Translation first”, then adjust position, margins and size. The preview renders at the output resolution.</p>
         </div>
         <div class="card">
           <div class="num">6</div>
@@ -179,7 +182,7 @@
         <li><b>Position and margins</b>: bottom centre, 5% side margins and 4.5% from the bottom edge, so long lines stay clear of the frame edge</li>
         <li><b>Size</b>: primary and secondary languages are sized separately; here the second line stays at 100% so both scripts carry equal weight</li>
         <li><b>Fonts</b>: built-in families, or import your own TTF / OTF / TTC from the export window</li>
-        <li><b>Delivery</b>: burn into the picture, export a separate SRT / ASS, or both</li>
+        <li><b>Delivery</b>: burn into the video, export a separate SRT / ASS, or both</li>
         <li><b>Edits stay local</b>: changing one translation rewrites one segment — nothing else is re-analysed or re-dubbed</li>
       </ul>
       <div class="note"><b>Settings travel with the project:</b> the track, the bilingual order, the font and the margins are stored in the project, so reopening the file brings back the same look.</div>
@@ -205,7 +208,7 @@
       <p class="sub">The features used here are documented in full in the guide.</p>
       <ul class="related">
         <li><b><a href="../../../#subtitles">Subtitles</a></b><span>Content source, style, fonts and delivery</span></li>
-        <li><b><a href="../../../#export">Export</a></b><span>Video, audio-only and subtitle output, resolution and bitrate</span></li>
+        <li><b><a href="../../../#export">Export</a></b><span>Video, audio only and subtitles only output, resolution and bitrate</span></li>
         <li><b><a href="../../../#analysis">AI analysis</a></b><span>Extraction, segmentation, recognition, translation and re-runs</span></li>
         <li><b><a href="../../../#timeline">Timeline</a></b><span>Moving, trimming, splitting, merging and locking segments</span></li>
       </ul>

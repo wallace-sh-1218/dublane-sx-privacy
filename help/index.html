@@ -16,7 +16,10 @@
 <header class="site">
   <div class="wrap">
     <a class="brand" href="./">
-      <img src="assets/brand/wordmark-zh.png" alt="Dublane · 声巷">
+      <picture>
+        <source srcset="assets/brand/wordmark-zh-light.png" media="(prefers-color-scheme: light)">
+        <img src="assets/brand/wordmark-zh.png" alt="Dublane · 声巷">
+      </picture>
       <span class="tag">使用指南</span>
     </a>
     <nav>
@@ -82,7 +85,7 @@
     </ol>
     <a class="tocCase" href="cases/">
       <b>使用案例</b>
-      <span>旁白介绍、添加字幕 · 完整成品与截图</span>
+      <span>旁白介绍、添加字幕、给视频配音 · 完整成品与截图</span>
     </a>
   </nav>
 
@@ -105,7 +108,7 @@
         <div class="card">
           <div class="num">3</div>
           <b>试听并导出</b>
-          <p>在时间线检查节奏与配音，点右上「导出」选择视频、纯音频或字幕。</p>
+          <p>在时间线检查节奏与配音，点右上「导出」选择视频、仅音频或仅字幕。</p>
         </div>
       </div>
       <figure>
@@ -199,14 +202,14 @@
       <p class="sub">字幕内容来自片段列表：可以只用原文、只用译文，或两者同时显示。</p>
       <ul class="list">
         <li><b>样式</b>：字号、颜色、描边、背景、位置（底部 / 居中 / 顶部）</li>
-        <li><b>输出方式</b>：烧录进画面、导出单独的 SRT / ASS 文件，或两者都要</li>
+        <li><b>输出方式</b>：烧录进视频、导出单独的 SRT / ASS 文件，或两者都要</li>
         <li><b>字体</b>：在导出窗口的「字幕」里选常用中文字体，或点「添加字体」导入自己的 TTF / OTF / TTC；导入的字体可以随时删除</li>
       </ul>
     </section>
 
     <section id="export" data-reveal>
       <h2>导出</h2>
-      <p class="sub">三种输出类型：完整视频、纯音频、仅字幕文件。</p>
+      <p class="sub">三种输出类型：视频、仅音频、仅字幕。</p>
       <figure>
         <div class="media">
           <video data-autoplay autoplay muted loop playsinline poster="assets/video/export-zh.jpg">

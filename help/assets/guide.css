@@ -62,6 +62,10 @@ header.site {
 header.site .wrap {
   display: flex; align-items: center; gap: 14px; height: 64px;
 }
+/* The wordmark has two versions: white for the dark theme, dark for the light
+   one, picked by <source media>. The <picture> is a plain flex item, so the
+   header layout is unchanged. */
+header.site .brand picture { display: block; }
 header.site .brand img { height: 26px; display: block; }
 header.site .brand { display: flex; align-items: center; gap: 10px; }
 header.site .tag {
