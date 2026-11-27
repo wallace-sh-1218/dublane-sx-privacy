@@ -16,11 +16,38 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 DIST="$ROOT/dist"
-ORIGIN="${SITE_ORIGIN:-dublane.pages.dev}"
 SOURCE_HOST="wallace-sh-1218.github.io"
 SOURCE_PATH="/dublane-sx-privacy/"
 
 die() { echo "build: $*" >&2; exit 1; }
+
+# Origin used for canonical / hreflang links.
+#
+# An explicit SITE_ORIGIN wins. Otherwise derive it from the deployment URL
+# Cloudflare hands the build: a deployment is served from
+# <hash>.<project>.pages.dev and a preview branch from <branch>.<project>.pages.dev,
+# while a project's production domain is always <project>.pages.dev — so keep
+# only the last three labels. A custom domain is used as it is. Local builds
+# have no CF_PAGES_URL and fall back to the known production domain.
+default_origin() {
+  local url="${CF_PAGES_URL:-}" host
+  if [ -z "$url" ]; then
+    echo "dublane.pages.dev"
+    return
+  fi
+  host="${url#*://}"
+  host="${host%%/*}"
+  host="${host%%\?*}"
+  host="$(printf '%s' "$host" | tr '[:upper:]' '[:lower:]')"
+  if [[ "$host" =~ ^(.+\.)?([a-z0-9-]+)\.pages\.dev$ ]]; then
+    echo "${BASH_REMATCH[2]}.pages.dev"
+  else
+    echo "$host"
+  fi
+}
+
+ORIGIN="${SITE_ORIGIN:-$(default_origin)}"
+[ -n "$ORIGIN" ] || die "could not work out the deployment origin"
 
 [ -f "$ROOT/index.html" ] || die "index.html not found in $ROOT"
 [ -f "$ROOT/deploy/_headers" ] || die "deploy/_headers is missing"
